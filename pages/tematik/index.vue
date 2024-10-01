@@ -1,15 +1,19 @@
+<script setup>
+const temaList = ref([
+  { id: 1, name: "Air Minum", tema: "airminum" },
+  { id: 2, name: "Stunting", tema: "stunting" },
+  { id: 3, name: "Perhutanan", tema: "perhutanan" },
+]);
+</script>
+
 <template>
   <div class="flex justify-between items-center">
     <div class="">
       <h1 class="text-2xl text-white">Tematik</h1>
       <h1 class="text-sm text-white">
-        <NuxtLink to="/" class="text-[#009efb] hover:text-[#7460e]"
-          >Dashboard</NuxtLink
+        <NuxtLink to="/" class="text-[#009efb] hover:text-[#7460e]">Dashboard</NuxtLink>
         >
-        >
-        <NuxtLink to="/" class="text-[#009efb] hover:text-[#7460e]"
-          >Informasi Pembangunan Daerah</NuxtLink
-        >
+        <NuxtLink to="/" class="text-[#009efb] hover:text-[#7460e]">Informasi Pembangunan Daerah</NuxtLink>
         > Tematik
       </h1>
     </div>
@@ -22,11 +26,7 @@
       <header class="flex items-center gap-10">
         <div class="flex items-center gap-4">
           <span>Show</span>
-          <select
-            name="entriescount"
-            id="entriescount"
-            class="py-2 px-3 w-[100px] outline-none rounded-md text-left bg-[#323743]"
-          >
+          <select name="entriescount" id="entriescount" class="py-2 px-3 w-[100px] outline-none rounded-md text-left bg-[#323743]">
             <option value="10">10</option>
             <option value="50">50</option>
             <option value="100" selected>100</option>
@@ -51,9 +51,7 @@
             <tr class="border-t-2" v-for="(tema, index) in temaList">
               <td class="py-8 px-5 text-center">{{ index + 1 }}</td>
               <td class="py-8 px-5">
-                <NuxtLink :to="`/tematik/${tema.tema}`">{{
-                  tema.name
-                }}</NuxtLink>
+                <NuxtLink :to="`/tematik/${tema.tema}`">{{ tema.name }}</NuxtLink>
               </td>
               <td class="py-8 px-5 text-center">1.000.000.000,00</td>
               <td class="py-8 px-5 text-center">10%</td>
@@ -77,9 +75,7 @@
     <Menu />
   </div>
   <div class="mt-5 w-full bg-[#272B34] py-12 px-7 rounded-lg text-white">
-    <h1 class="text-center font-bold text-2xl">
-      Proporsi Pendanaan Per Tingkatan Pemerintah Daerah
-    </h1>
+    <h1 class="text-center font-bold text-2xl">Proporsi Pendanaan Per Tingkatan Pemerintah Daerah</h1>
     <div class="flex justify-center items-center gap-24 py-12">
       <span class="px-10 py-2 bg-sky-500">PROV</span>
       <span class="px-10 py-2 bg-yellow-500">KABKOT</span>
@@ -90,11 +86,3 @@
     </div>
   </div>
 </template>
-
-<script setup>
-const temaList = ref([
-  { id: 1, name: "Air Minum", tema: "airminum" },
-  { id: 2, name: "Stunting", tema: "stunting" },
-  { id: 3, name: "Perhutanan", tema: "perhutanan" },
-]);
-</script>
