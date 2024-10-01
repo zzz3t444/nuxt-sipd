@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: #f2f7f8;
+}
+
+.active-navbar .sidebar {
+  @apply w-[225px];
+}
+
+.active-navbar .text {
+  @apply block;
+}
+
+.active-navbar .space {
+  @apply w-[225px];
+}
+
+.active-navbar .section {
+  @apply ml-[225px];
+}
+
+.active-navbar .cap {
+  @apply block;
+}
+
+.active-navbar .small-cap {
+  @apply hidden;
+}
+
+.active-navbar .icon {
+  @apply float-left;
+}
+
+.active-navbar .collappse {
+  @apply flex items-center justify-between;
+}
+
+.active-navbar .collapse-title {
+  @apply flex items-center;
+}
+
+.active-small-device-sidebar .smoll {
+  @apply left-0;
+}
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+.card-hover {
+  -webkit-transition: all 0.25s ease;
+  -o-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+
+.card-hover:hover {
+  -webkit-transform: translateY(-4px) scale(1.01);
+  -moz-transform: translateY(-4px) scale(1.01);
+  -ms-transform: translateY(-4px) scale(1.01);
+  -o-transform: translateY(-4px) scale(1.01);
+  transform: translateY(-4px) scale(1.01);
+  -webkit-box-shadow: 0 14px 24px rgba(62, 57, 107, 0.1);
+  box-shadow: 0 14px 24px rgba(62, 57, 107, 0.1);
+}
+
+.modal-open {
+  overflow: hidden;
+}

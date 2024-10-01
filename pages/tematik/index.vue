@@ -1,0 +1,100 @@
+<template>
+  <div class="flex justify-between items-center">
+    <div class="">
+      <h1 class="text-2xl text-white">Tematik</h1>
+      <h1 class="text-sm text-white">
+        <NuxtLink to="/" class="text-[#009efb] hover:text-[#7460e]"
+          >Dashboard</NuxtLink
+        >
+        >
+        <NuxtLink to="/" class="text-[#009efb] hover:text-[#7460e]"
+          >Informasi Pembangunan Daerah</NuxtLink
+        >
+        > Tematik
+      </h1>
+    </div>
+    <div class="">
+      <SelectYear />
+    </div>
+  </div>
+  <div class="bg-[#272B34] w-full sm:px-14 py-4 rounded-lg my-8 text-white">
+    <div class="w-full bg-[#272B34] px-7 rounded-lg text-white py-8">
+      <header class="flex items-center gap-10">
+        <div class="flex items-center gap-4">
+          <span>Show</span>
+          <select
+            name="entriescount"
+            id="entriescount"
+            class="py-2 px-3 w-[100px] outline-none rounded-md text-left bg-[#323743]"
+          >
+            <option value="10">10</option>
+            <option value="50">50</option>
+            <option value="100" selected>100</option>
+          </select>
+          <span>Entries</span>
+        </div>
+        <div class="">
+          <span>Showing 0 to 0 of 0 entries</span>
+        </div>
+      </header>
+      <div class="w-full mt-5 overflow-x-auto">
+        <table class="w-full">
+          <thead>
+            <th class="px-4">No</th>
+            <th class="px-4">Tema</th>
+            <th class="px-4">Anggaran / Nasional</th>
+            <th class="px-4">%{?}</th>
+            <th class="px-4">Anggaran / Provinsi</th>
+            <th class="px-4">%{?}</th>
+          </thead>
+          <tbody>
+            <tr class="border-t-2" v-for="(tema, index) in temaList">
+              <td class="py-8 px-5 text-center">{{ index + 1 }}</td>
+              <td class="py-8 px-5">
+                <NuxtLink :to="`/tematik/${tema.tema}`">{{
+                  tema.name
+                }}</NuxtLink>
+              </td>
+              <td class="py-8 px-5 text-center">1.000.000.000,00</td>
+              <td class="py-8 px-5 text-center">10%</td>
+              <td class="py-8 px-5 text-center">2.000.000.000,00</td>
+              <td class="py-8 px-5 text-center">10%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <footer>
+        <div class="flex justify-between items-center">
+          <span class="font-bold text-xl"> Total: </span>
+          <span class="font-bold">5.000.000.000,00</span>
+          <div class="w-[70px]"></div>
+        </div>
+        <div class="text-xl mt-4">Data Update : 20 Juli 2024</div>
+      </footer>
+    </div>
+  </div>
+  <div class="pt-8 flex justify-end">
+    <Menu />
+  </div>
+  <div class="mt-5 w-full bg-[#272B34] py-12 px-7 rounded-lg text-white">
+    <h1 class="text-center font-bold text-2xl">
+      Proporsi Pendanaan Per Tingkatan Pemerintah Daerah
+    </h1>
+    <div class="flex justify-center items-center gap-24 py-12">
+      <span class="px-10 py-2 bg-sky-500">PROV</span>
+      <span class="px-10 py-2 bg-yellow-500">KABKOT</span>
+    </div>
+    <div class="flex flex-col gap-8 w-full px-4">
+      <ChartCollapse bgcolor="bg-sky-500" title="Provinsi" ckey="1" />
+      <ChartCollapse bgcolor="bg-yellow-500" title="Kab / Kota" ckey="2" />
+    </div>
+  </div>
+</template>
+
+<script setup>
+const temaList = ref([
+  { id: 1, name: "Air Minum", tema: "airminum" },
+  { id: 2, name: "Stunting", tema: "stunting" },
+  { id: 3, name: "Perhutanan", tema: "perhutanan" },
+]);
+</script>
