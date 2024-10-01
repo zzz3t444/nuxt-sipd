@@ -1,21 +1,3 @@
-<template>
-  <div class="card-hover" @click="$emit('cardClick', label)">
-    <div
-      class="w-full border h-24 p-2 pl-5 rounded-xl flex justify-between bg-white cursor-pointer text-white"
-      :style="{
-        borderColor: color,
-        background: color,
-      }"
-    >
-      <div class="flex flex-col justify-center gap-1">
-        <h1 class="text-2xl lg:text-3xl font-semibold">{{ value }}</h1>
-        <h1 class="font-medium text-xs">{{ label }}</h1>
-      </div>
-      <i class="fa-2xl fa-solid fa-chart-simple content-center"></i>
-    </div>
-  </div>
-</template>
-
 <script setup>
 defineProps({
   color: {
@@ -34,3 +16,26 @@ defineProps({
 
 defineEmits(["cardClick"]);
 </script>
+
+<template>
+  <div class="card-hover" @click="$emit('cardClick', label)">
+    <div
+      class="border h-32 p-2 pl-5 rounded-2xl flex justify-between bg-white cursor-pointer text-white"
+      :style="{
+        borderColor: color,
+        background: color,
+      }">
+      <div class="flex flex-col justify-center gap-1">
+        <h1 class="text-2xl lg:text-5xl font-medium">{{ value }}</h1>
+        <h1 class="font-medium">{{ label }}</h1>
+      </div>
+      <ul>
+        <svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M7.7488 10.8603L13.0235 6.44815C13.1196 6.36422 13.1949 6.26526 13.2451 6.15695C13.3506 5.94211 13.3506 5.70114 13.2451 5.4863C13.1949 5.37798 13.1196 5.27902 13.0235 5.1951L7.7488 0.782953C7.65043 0.700676 7.53366 0.635411 7.40515 0.590884C7.27663 0.546356 7.13889 0.523438 6.99978 0.523438C6.71885 0.523438 6.44942 0.616788 6.25077 0.782953C6.05212 0.949117 5.94052 1.17448 5.94052 1.40948C5.94052 1.64447 6.05212 1.86984 6.25077 2.036L9.7321 4.93919L1.72503 4.93919C1.44524 4.93919 1.17691 5.03216 0.979071 5.19765C0.781229 5.36314 0.670084 5.58759 0.670084 5.82162C0.670084 6.05566 0.781229 6.28011 0.979071 6.44559C1.17691 6.61108 1.44524 6.70405 1.72503 6.70405L9.7321 6.70405L6.25077 9.60724C6.15189 9.68928 6.07341 9.78687 6.01985 9.89441C5.96629 10.0019 5.93871 10.1173 5.93871 10.2338C5.93871 10.3503 5.96629 10.4656 6.01985 10.5731C6.07341 10.6807 6.15189 10.7783 6.25077 10.8603C6.34884 10.943 6.46552 11.0086 6.59407 11.0534C6.72263 11.0982 6.86052 11.1213 6.99978 11.1213C7.13905 11.1213 7.27694 11.0982 7.40549 11.0534C7.53405 11.0086 7.65072 10.943 7.7488 10.8603Z"
+            fill="white" />
+        </svg>
+      </ul>
+    </div>
+  </div>
+</template>

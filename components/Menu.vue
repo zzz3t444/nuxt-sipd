@@ -4,7 +4,7 @@
       <span>Menu</span>
       <i class="fa-solid fa-chevron-down"></i>
     </button>
-  
+
     <div v-if="isActive" :class="`w-[300px] shadow-lg py-2 rounded-md absolute top-full right-0 bg-[#272B34]`">
       <div class="w-full">
         <a href="#" class="flex items-center gap-4 w-full hover:bg-black hover:backdrop-opacity-15 py-2 px-5">
@@ -18,7 +18,7 @@
         <a href="#" class="flex items-center gap-4 w-full hover:bg-black hover:backdrop-opacity-15 py-2 px-5">
           <i class="fa-solid fa-chart-column"></i>
           <span>Set Trend Daerah</span>
-        </a> 
+        </a>
         <a href="#" class="flex items-center gap-4 w-full hover:bg-black hover:backdrop-opacity-15 py-2 px-5">
           <i class="fa-regular fa-circle-play"></i>
           <span>Indikator Kinerja</span>
@@ -40,19 +40,19 @@
 </template>
 
 <script lang="ts" setup>
-const isActive = ref(false)
+const isActive = ref(false);
 
 const toggleMenu = () => {
-  isActive.value = !isActive.value
-}
+  isActive.value = !isActive.value;
+};
 
 onMounted(() => {
-  window.addEventListener('click', function(event: MouseEvent) {
-    const targetElement = event.target as HTMLElement
+  window.addEventListener("click", function (event: MouseEvent) {
+    const targetElement = event.target as HTMLElement;
 
-    if(!targetElement.closest('#button-menu')) {
-      isActive.value = false
+    if (!targetElement.closest("#button-menu")) {
+      isActive.value = false;
     }
-  })
-})
+  });
+});
 </script>

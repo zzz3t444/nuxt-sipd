@@ -1,14 +1,14 @@
 <template>
   <div class="flex justify-between items-center">
     <div class="">
-      <h1 class="text-2xl text-white">Tematik</h1>
-      <h1 class="text-sm text-white">
+      <h1 class="text-2xl text-black">Tematik</h1>
+      <h1 class="text-sm text-neutral-500">
         <NuxtLink to="/" class="text-[#009efb] hover:text-[#7460e]">Dashboard</NuxtLink>
         >
         <NuxtLink to="/" class="text-[#009efb] hover:text-[#7460e]">Informasi Pembangunan Daerah</NuxtLink>
         >
         <NuxtLink to="/tematik" class="text-[#009efb] hover:text-[#7460e]">Tematik</NuxtLink>
-        > 
+        >
         <NuxtLink :to="`/tematik/${route.params.tema}`" class="text-[#009efb] hover:text-[#7460e]">
           {{ route.params.tema }}
         </NuxtLink>
@@ -20,15 +20,16 @@
       <SelectYear />
     </div>
   </div>
-  <div class="bg-[#272B34] w-full sm:px-14 py-4 rounded-lg my-8 text-white">
-    <div class="w-full bg-[#272B34] px-7 rounded-lg text-white py-8">
+  <div class="bg-white w-full sm:px-14 py-4 rounded-lg my-8">
+    <div class="w-full bg-white px-7 rounded-lg text-black py-8">
       <header class="flex items-center gap-10">
         <div class="flex items-center gap-4">
           <span>Show</span>
-          <select name="entriescount" id="entriescount"
-            class="py-2 px-3 w-[100px] outline-none rounded-md text-left bg-[#323743]">
+          <select name="entriescount" id="entriescount" class="py-2 px-3 w-[120px] outline-none text-black rounded-md text-left bg-[#f2f7f8]">
             <option value="10">10</option>
+            <option value="10">25</option>
             <option value="50">50</option>
+            <option value="50">75</option>
             <option value="100" selected>100</option>
           </select>
           <span>Entries</span>
@@ -49,27 +50,25 @@
           </thead>
           <tbody>
             <tr class="border-t-2" v-for="(kabupaten, index) in kabupatenList">
-              <td class="py-8 px-5 text-center">{{ index + 1 }}</td>
-              <td class="py-8 px-5">
-                <NuxtLink>{{
-                  kabupaten.name
-                }}</NuxtLink>
+              <td class="py-4 px-5 text-center">{{ index + 1 }}</td>
+              <td class="py-4 px-5">
+                <NuxtLink>{{ kabupaten.name }}</NuxtLink>
               </td>
-              <td class="py-8 px-5 text-center">1.000.000.000,00</td>
-              <td class="py-8 px-5 text-center">10%</td>
-              <td class="py-8 px-5 text-center">2.000.000.000,00</td>
-              <td class="py-8 px-5 text-center">10%</td>
+              <td class="py-4 px-5 text-center">1.000.000.000,00</td>
+              <td class="py-4 px-5 text-center">10%</td>
+              <td class="py-4 px-5 text-center">2.000.000.000,00</td>
+              <td class="py-4 px-5 text-center">10%</td>
             </tr>
           </tbody>
         </table>
       </div>
       <footer>
-        <div class="flex justify-between items-center">
+        <div class="flex justify-between mt-10 items-center">
           <span class="font-bold text-xl"> Total: </span>
           <span class="font-bold">5.000.000.000,00</span>
           <div class="w-[70px]"></div>
         </div>
-        <div class="text-xl mt-4">Data Update : 20 Juli 2024</div>
+        <div class="text-lg mt-4">Data Update : 20 Juli 2024</div>
       </footer>
     </div>
   </div>
@@ -77,9 +76,7 @@
     <Menu />
   </div>
   <div class="mt-5 w-full bg-[#272B34] py-12 px-7 rounded-lg text-white">
-    <h1 class="text-center font-bold text-2xl">
-      Proporsi Pendanaan Per Tingkatan Pemerintah Daerah
-    </h1>
+    <h1 class="text-center font-bold text-2xl">Proporsi Pendanaan Per Tingkatan Pemerintah Daerah</h1>
     <div class="flex justify-center items-center gap-24 py-12">
       <span class="px-10 py-2 bg-sky-500">PROV</span>
       <span class="px-10 py-2 bg-yellow-500">KABKOT</span>

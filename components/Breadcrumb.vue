@@ -1,3 +1,18 @@
+<script>
+export default {
+  props: {
+    province: {
+      type: String,
+      default: "",
+    },
+    district: {
+      type: String,
+      default: "",
+    },
+  },
+};
+</script>
+
 <template>
   <nav class="flex flex-row items-center text-sm text-white">
     <NuxtLink to="/" class="mr-2 text-[#009efb] hover:text-[#7460e]">Dashboard</NuxtLink>
@@ -14,18 +29,3 @@
     <div v-if="district" class="breadcrumb-item active">{{ district }}</div>
   </nav>
 </template>
-
-<script>
-export default {
-  props: {
-    province: {
-      type: String,
-      default: "",
-    },
-    district: {
-      type: String,
-      default: "",
-    },
-  },
-};
-</script>

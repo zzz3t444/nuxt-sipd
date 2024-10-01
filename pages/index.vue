@@ -1,7 +1,9 @@
 <script setup>
-import { onMounted, ref, computed } from "vue";
+// onMounted
+import { ref, computed } from "vue";
 import { Chart } from "chart.js/auto";
 import StatusCard from "../components/StatusCard.vue";
+import LabelColor from "./dashboard/LandingReadme/LabelColor.vue";
 
 const searchTerm = ref("");
 
@@ -222,27 +224,27 @@ const data = ref({
   },
   chart: {
     label: ["Belum Input", "Ranwal", "Rancangan", "Musrenbang", "Rancangan Akhir", "Penetapan", "Rancangan KUA dan PPAS", "Penetapan KUA dan PPAS", "Rancangan APBD", "Penetapan APBD"],
-    value: [4, 0, 0, 0, 0, 1, 0, 1, 10, 0],
+    value: [4, 7, 9, 12, 5, 3, 5, 10, 10, 9],
   },
 });
 
 const rkpdCards = {
-  beluminput: { color: "#67B8FF", label: "Belum Input" },
-  rancangan: { color: "#1391FF", label: "Rancangan awal" },
-  ranwal: { color: "#0070D2", label: "Rancangan" },
-  musrenbang: { color: "#005EB0", label: "Musrenbang" },
-  rancanganakhir: { color: "#004179", label: "Rancangan Akhir" },
-  penetapan: { color: "#002444", label: "Penetapan" },
+  beluminput: { color: "#ff2f55", label: "Belum Input" },
+  rancangan: { color: "#39c449", label: "Rancangan awal" },
+  ranwal: { color: "#263238", label: "Rancangan" },
+  musrenbang: { color: "#ffbc34", label: "Musrenbang" },
+  rancanganakhir: { color: "#7460ee", label: "Rancangan Akhir" },
+  penetapan: { color: "#009efb", label: "Penetapan" },
 };
 
 const kuaPpasCards = {
-  rancangan_kua_ppas: { color: "#4A47FF", label: "Rancangan " },
-  penetapan_kua_ppas: { color: "#0300D0", label: "Penetapan " },
+  rancangan_kua_ppas: { color: "#cd69c9", label: "Rancangan " },
+  penetapan_kua_ppas: { color: "#cd3178", label: "Penetapan " },
 };
 
 const apbdCards = {
-  rancangan_apbd: { color: "#00D0E8", label: "Rancangan " },
-  penetapan_apbd: { color: "#0097A8", label: "Penetapan " },
+  rancangan_apbd: { color: "#b3ee3a", label: "Rancangan " },
+  penetapan_apbd: { color: "#cebe70", label: "Penetapan " },
 };
 
 const showModal = ref(false);
@@ -260,12 +262,12 @@ const openModal = (key) => {
   selectedCard.value = allCards[key].label;
   selectedData.value = data.value.detail[key];
   showModal.value = true;
-  setTimeout(() => toggleBodyScroll(true), 300); // Delay matching the enter duration
+  setTimeout(() => toggleBodyScroll(true), 300);
 };
 
 const closeModal = () => {
   showModal.value = false;
-  setTimeout(() => toggleBodyScroll(false), 200); // Delay matching the leave duration
+  setTimeout(() => toggleBodyScroll(false), 200);
 };
 
 onMounted(() => {
@@ -277,8 +279,9 @@ onMounted(() => {
         {
           label: "Chart Rekap Tahapan Per-Provinsi " + data.value.singkat.tahun,
           data: data.value.chart.value,
-          backgroundColor: ["#67B8FF", "#1391FF", "#0070D2", "#005EB0", "#004179", "#002444", "#4A47FF", "#0300D0", "#00D0E8", "#0097A8"],
-          hoverOffset: 4,
+          backgroundColor: ["#ff2f55", "#39c449", "#263238", "#ffbc34", "#7460ee", "#009efb", "#cd69c9", "#cd3178", "#b3ee3a", "#cebe70"],
+          hoverOffset: 10,
+          borderWidth: 0,
         },
       ],
     };
@@ -288,12 +291,19 @@ onMounted(() => {
       data: chartData,
       options: {
         responsive: true,
+        maintainAspectRatio: true,
         plugins: {
           legend: {
-            position: "right",
-            align: "center",
-            maxHeight: "1000",
-            width: "1000",
+            position: "center",
+            align: "start",
+            maxHeight: "500",
+            width: "500",
+          },
+        },
+        layout: {
+          padding: {
+            top: 10,
+            bottom: 10,
           },
         },
       },
@@ -306,7 +316,7 @@ onMounted(() => {
   <div class="flex flex-col gap-4">
     <div class="flex justify-between items-center self-center w-full">
       <div class="">
-        <h1 class="text-2xl text-white">Dashboard</h1>
+        <h1 class="text-2xl text-black">Dashboard</h1>
       </div>
       <div class="h-auto w-auto">
         <div class="">
@@ -314,7 +324,7 @@ onMounted(() => {
         </div>
       </div>
     </div>
-    <div class="text-lg w-full py-3 px-5 bg-[#CCECFE] text-[#5E5E5E] border border-[#b8e4fe] rounded-md">
+    <div class="text-lg w-full py-3 px-5 bg-[#ccecfe] text-[#5E5E5E] border border-[#b8e4fe] rounded-md">
       <div class="">
         Posisi Per-Provinsi Tahun:
         <b class="text-black">{{ data.singkat.tahun }}</b>
@@ -323,39 +333,42 @@ onMounted(() => {
   </div>
 
   <div class="flex flex-col gap-5 py-5">
-    <div class="flex gap-3 flex-col lg:flex-row">
-      <div class="bg-[#272B34] px-4 sm:px-9 py-3 sm:py-5 lg:p-8 rounded-xl flex flex-col gap-3 text-white w-full">
-        <h1 class="text-xl text-white font-semibold mb-2">RKPD</h1>
-        <div class="w-full grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-5 lg:gap-6 mb-8">
+    <div class="flex flex-col lg:flex-row gap-5">
+      <div class="bg-white px-4 sm:px-9 py-3 sm:py-5 lg:p-8 rounded-3xl flex flex-col gap-3 text-white w-full">
+        <h1 class="text-xl text-black font-medium mb-2">RKPD</h1>
+        <div class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-5 lg:gap-3 mb-8">
           <StatusCard v-for="(card, key) in rkpdCards" :key="key" :color="card.color" :value="data.singkat[key]" :label="card.label" @card-click="openModal(key)" />
         </div>
       </div>
-      <div class="flex gap-3 flex-col sm:flex-row">
-        <div class="bg-[#272B34] px-4 sm:px-9 py-3 sm:py-5 lg:p-8 rounded-xl flex flex-col gap-3 text-white w-full">
-          <h1 class="text-xl mb-2">KUA dan PPAS</h1>
-          <div class="w-full grid grid-cols-2 sm:grid-cols-1 gap-2 sm:gap-5 lg:gap-6 mb-8v lg:min-w-[130px]">
+
+      <div class="flex flex-col sm:flex-row gap-5 w-full">
+        <div class="bg-white px-4 sm:px-9 py-3 sm:py-5 lg:p-8 rounded-3xl flex flex-col gap-3 text-white w-full">
+          <h1 class="text-xl text-black font-medium mb-2">KUA dan PPAS</h1>
+          <div class="w-full grid grid-cols-1 sm:grid-cols-1 gap-5 sm:gap-5 lg:gap-3 mb-8">
             <StatusCard v-for="(card, key) in kuaPpasCards" :key="key" :color="card.color" :value="data.singkat[key]" :label="card.label" @card-click="openModal(key)" />
           </div>
         </div>
-        <div class="bg-[#272B34] px-4 sm:px-9 py-3 sm:py-5 lg:p-8 rounded-xl flex flex-col gap-3 text-white w-full">
-          <h1 class="text-xl mb-2">APBD</h1>
-          <div class="w-full grid grid-cols-2 sm:grid-cols-1 gap-2 sm:gap-5 lg:gap-6 mb-8 lg:min-w-[130px]">
+
+        <div class="bg-white px-4 sm:px-9 py-3 sm:py-5 lg:p-8 rounded-3xl flex flex-col gap-3 text-white w-full">
+          <h1 class="text-xl text-black font-medium mb-2">APBD</h1>
+          <div class="w-full grid grid-cols-1 sm:grid-cols-1 gap-5 sm:gap-5 lg:gap-3 mb-8">
             <StatusCard v-for="(card, key) in apbdCards" :key="key" :color="card.color" :value="data.singkat[key]" :label="card.label" @card-click="openModal(key)" />
           </div>
         </div>
       </div>
     </div>
-    <div class="flex w-full h-full justify-center bg-[#272B34] rounded p-4 sm:px-20 py-12 max-h-[700px]">
-      <canvas id="myChart" class="block"></canvas>
+
+    <div class="justify-center bg-white rounded-3xl sm:px-5 p-10 grid lg:flex items-center h-full gap-10 lg:max-h-[600px]">
+      <canvas id="myChart"></canvas>
+      <LabelColor />
     </div>
-    <div></div>
   </div>
 
   <!-- Modal -->
-  <div v-show="showModal" class="fixed top-0 inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[500] py-[10px] overflow-auto">
+  <div v-show="showModal" class="fixed top-0 inset-0 bg-black bg-opacity-70 flex items-center justify-center z-[500] py-[10px] overflow-auto">
     <transition name="modal-drop">
       <div v-show="showModal" class="bg-white rounded sm:w-full md:w-3/4 overflow-auto">
-        <h2 class="text-2xl bg-[#009efb] p-4 text-white">Detail: {{ selectedCard }}</h2>
+        <h2 class="text-lg bg-[#009efb] p-4 text-white">Detail: {{ selectedCard }}</h2>
         <div class="p-4">
           <div class="mb-4">
             <input v-model="searchTerm" type="text" placeholder="Search..." class="w-full p-2 border border-gray-300 outline-none rounded" />

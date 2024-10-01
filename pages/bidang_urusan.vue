@@ -12,8 +12,8 @@ const lingkup = ["nasional", "provinsi", "kab/kota"];
 <template>
   <div class="flex justify-between items-center">
     <div class="">
-      <h1 class="text-2xl text-white">Tematik</h1>
-      <h1 class="text-sm text-white">
+      <h1 class="text-2xl text-black">Bidang Urusan</h1>
+      <h1 class="text-sm text-neutral-500">
         <NuxtLink to="/" class="text-[#009efb] hover:text-[#7460e]">Dashboard</NuxtLink>
         >
         <NuxtLink to="/" class="text-[#009efb] hover:text-[#7460e]">Informasi Pembangunan Daerah</NuxtLink>
@@ -24,31 +24,35 @@ const lingkup = ["nasional", "provinsi", "kab/kota"];
       <SelectYear />
     </div>
   </div>
-  <div class="bg-[#272B34] w-full px-4 sm:px-14 py-4 rounded-lg my-8">
+  <div class="bg-white w-full px-4 sm:px-14 py-4 rounded-lg my-8">
     <form class="flex flex-col gap-3 w-full">
-      <div class="flex flex-wrap w-full">
-        <div class="flex flex-col gap-2 w-[50%] pr-1">
-          <label for="tema" class="text-white">Pilih Tema</label>
+      <div class="flex items-center gap-5">
+        <div class="flex flex-col gap-2 w-[50%]">
+          <label for="tema" class="text-black">Pilih Tema</label>
           <SelectInput :render="temaList" class="w-full" selectname="tema" selectid="tema" />
         </div>
-        <div class="flex flex-col gap-2 w-[50%] pl-1">
-          <label for="tema" class="text-white">Pilih Sub kegiatan</label>
+        <div class="flex flex-col gap-2 w-[50%]">
+          <label for="tema" class="text-black">Pilih Sub kegiatan</label>
           <MultipleSelectInput :render="subKegiatan" class="w-full" selectname="subkegiatan" selectid="subkegiatan" />
         </div>
       </div>
       <div class="flex flex-col gap-2 w-[100%]">
-        <label for="tema" class="text-white">Lingkup</label>
+        <label for="tema" class="text-black">Lingkup</label>
         <SelectInput :render="lingkup" class="w-full" selectname="lingkup" selectid="lingkup" />
       </div>
-      <div class="flex flex-col gap-2 w-[50%]">
-        <label for="tema" class="text-white">Provinsi</label>
-        <SelectInput :render="temaList" class="w-full" selectname="lingkup" selectid="lingkup" />
+      <div class="flex items-center gap-5">
+        <div class="flex flex-col gap-2 w-[50%]">
+          <label for="tema" class="text-black">Provinsi</label>
+          <SelectInput :render="temaList" class="w-full" selectname="lingkup" selectid="lingkup" />
+        </div>
+        <div class="flex flex-col gap-2 w-[50%]">
+          <label for="tema" class="text-black">Kab / Kota</label>
+          <SelectInput :render="temaList" class="w-full" selectname="lingkup" selectid="lingkup" />
+        </div>
       </div>
-      <div class="flex flex-col gap-2 w-[50%]">
-        <label for="tema" class="text-white">Kab / Kota</label>
-        <SelectInput :render="temaList" class="w-full" selectname="lingkup" selectid="lingkup" />
+      <div class="flex justify-end mt-5 mb-5">
+        <button class="py-2 px-6 bg-[#009efb] rounded-lg text-white hover:scale-95 duration-150 transition-all">Terapkan</button>
       </div>
-      <button class="py-2 px-6 text-white bg-sky-500 rounded-lg w-fit mt-5">Terapkan</button>
     </form>
   </div>
   <div class="mt-16 w-full">

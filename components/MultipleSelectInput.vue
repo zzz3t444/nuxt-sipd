@@ -4,7 +4,6 @@ const selected = ref<string[]>([]);
 const isActive = ref(false);
 const searchQuery = ref("");
 
-// Transform the render prop into a flat list of items for easier filtering
 const filteredCategories = computed(() => {
   const result: Record<string, string[]> = {};
   for (const [category, items] of Object.entries(attr.render)) {
@@ -73,13 +72,13 @@ onMounted(() => {
       </optgroup>
     </select>
     <div class="w-full relative">
-      <span class="button w-[100%] text-white bg-[#323743] rounded-md flex justify-between items-center px-8 py-6 cursor-pointer" @click="toggleDropdown">
+      <span class="button w-[100%] text-black bg-[#f5f5f5] rounded-md flex justify-between items-center px-8 py-4 cursor-pointer" @click="toggleDropdown">
         <div>{{ selected.length > 1 ? `${selected.length} dipilih` : selected.length === 1 ? selected[0] : "Pilih item" }}</div>
         <i class="fa-solid fa-chevron-down"></i>
       </span>
-      <div v-show="isActive" class="w-full bg-[#323743] text-white absolute left-0 top-[100%] z-50 select">
+      <div v-show="isActive" class="w-full bg-[#f5f5f5] text-black absolute left-0 top-[100%] z-50 select">
         <div>
-          <input type="text" placeholder="Search..." class="search w-full px-4 py-2 border-b-2 bg-[#323743] outline-none" @input="filterItems" />
+          <input type="text" placeholder="Search..." class="search w-full px-4 py-2 border-b-2 bg-[#f2f7f8] outline-none" @input="filterItems" />
         </div>
         <div class="max-h-[200px] overflow-y-auto no-scrollbar">
           <span class="flex items-center px-4 py-3 hover:bg-blue-500 selectitem" @click="toggleSelectAll"> <input type="checkbox" :checked="isAllSelected" class="mr-2" />Select All </span>
