@@ -12,9 +12,10 @@ const { data: testrekapperbidang_prov } = await useAsyncData("testrekapperbidang
   <div>
     <RekapTitle />
 
-    <div class="overflow-auto mt-5 rounded">
-      <h2 class="text-base bg-[#009efb] p-5 text-white">Tahapan Perprovinsi {{ tahapan.tahun }}</h2>
+    <div class="overflow-auto mt-5 rounded-xl">
+      <h2 class="text-base bg-[#009efb] p-5 rounded-tr-xl rounded-tl-xl text-white">Tahapan Perprovinsi {{ tahapan.tahun }}</h2>
       <div class="p-5 bg-white w-full">
+        <EntriesValue />
         <RekapTableTahapanPerprovinsi :data="tahapan.data" />
       </div>
     </div>

@@ -574,7 +574,7 @@ const openModal = (key) => {
   selectedCard.value = allCards[key].label;
   selectedData.value = data.value.detail[key];
   showModal.value = true;
-  setTimeout(() => toggleBodyScroll(true), 300); 
+  setTimeout(() => toggleBodyScroll(true), 300);
 };
 
 const closeModal = () => {

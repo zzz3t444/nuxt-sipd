@@ -1,12 +1,29 @@
+<script setup>
+const props = defineProps({
+  data: {
+    type: Array,
+    required: true,
+  },
+});
+
+const searchTerm = ref("");
+
+const filteredData = computed(() => {
+  if (!searchTerm.value) return props.data;
+  return props.data.filter(
+    (item) =>
+      item.kode_pemda.toLowerCase().includes(searchTerm.value.toLowerCase()) ||
+      item.pemda.toLowerCase().includes(searchTerm.value.toLowerCase()) ||
+      item.kode_bidang.toLowerCase().includes(searchTerm.value.toLowerCase()) ||
+      item.bidang_urusan.toLowerCase().includes(searchTerm.value.toLowerCase())
+  );
+});
+</script>
+
 <template>
   <div class="overflow-auto">
     <div class="p-5">
-      <input
-        v-model="searchTerm"
-        type="text"
-        placeholder="Search by name, code, or bidang urusan"
-        class="mb-2 p-2 border border-gray-300 rounded"
-      />
+      <input v-model="searchTerm" type="text" placeholder="Search by name, code, or bidang urusan" class="mb-2 p-2 border border-gray-300 rounded" />
       <table class="w-full border-collapse border border-gray-300">
         <thead>
           <tr class="">
@@ -56,25 +73,3 @@
     </div>
   </div>
 </template>
-
-<script setup>
-const props = defineProps({
-  data: {
-    type: Array,
-    required: true,
-  },
-});
-
-const searchTerm = ref("");
-
-const filteredData = computed(() => {
-  if (!searchTerm.value) return props.data;
-  return props.data.filter(
-    (item) =>
-      item.kode_pemda.toLowerCase().includes(searchTerm.value.toLowerCase()) ||
-      item.pemda.toLowerCase().includes(searchTerm.value.toLowerCase()) ||
-      item.kode_bidang.toLowerCase().includes(searchTerm.value.toLowerCase()) ||
-      item.bidang_urusan.toLowerCase().includes(searchTerm.value.toLowerCase())
-  );
-});
-</script>

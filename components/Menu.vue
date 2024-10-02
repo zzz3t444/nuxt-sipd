@@ -1,3 +1,21 @@
+<script lang="ts" setup>
+const isActive = ref(false);
+
+const toggleMenu = () => {
+  isActive.value = !isActive.value;
+};
+
+onMounted(() => {
+  window.addEventListener("click", function (event: MouseEvent) {
+    const targetElement = event.target as HTMLElement;
+
+    if (!targetElement.closest("#button-menu")) {
+      isActive.value = false;
+    }
+  });
+});
+</script>
+
 <template>
   <div class="text-white relative">
     <button class="flex justify-between p-4 rounded-lg bg-sky-500 items-center w-[100px]" id="button-menu" @click="toggleMenu">
@@ -38,21 +56,3 @@
     </div>
   </div>
 </template>
-
-<script lang="ts" setup>
-const isActive = ref(false);
-
-const toggleMenu = () => {
-  isActive.value = !isActive.value;
-};
-
-onMounted(() => {
-  window.addEventListener("click", function (event: MouseEvent) {
-    const targetElement = event.target as HTMLElement;
-
-    if (!targetElement.closest("#button-menu")) {
-      isActive.value = false;
-    }
-  });
-});
-</script>

@@ -223,8 +223,8 @@ const data = ref({
     penetapan_apbd: [],
   },
   chart: {
-    label: ["Belum Input", "Ranwal", "Rancangan", "Musrenbang", "Rancangan Akhir", "Penetapan", "Rancangan KUA dan PPAS", "Penetapan KUA dan PPAS", "Rancangan APBD", "Penetapan APBD"],
-    value: [4, 7, 9, 12, 5, 3, 5, 10, 10, 9],
+    label: ["Belum Input", "Rancangan Awal", "Rancangan", "Musrenbang", "Rancangan Akhir", "Penetapan", "Rancangan KUA dan PPAS", "Penetapan KUA dan PPAS", "Rancangan APBD", "Penetapan APBD"],
+    value: [4, 7, 1, 1, 1, 3, 1, 1, 20, 4],
   },
 });
 
@@ -280,7 +280,7 @@ onMounted(() => {
           label: "Chart Rekap Tahapan Per-Provinsi " + data.value.singkat.tahun,
           data: data.value.chart.value,
           backgroundColor: ["#ff2f55", "#39c449", "#263238", "#ffbc34", "#7460ee", "#009efb", "#cd69c9", "#cd3178", "#b3ee3a", "#cebe70"],
-          hoverOffset: 10,
+          hoverOffset: 20,
           borderWidth: 0,
         },
       ],
@@ -335,7 +335,7 @@ onMounted(() => {
   <div class="flex flex-col gap-5 py-5">
     <div class="flex flex-col lg:flex-row gap-5">
       <div class="bg-white px-4 sm:px-9 py-3 sm:py-5 lg:p-8 rounded-3xl flex flex-col gap-3 text-white w-full">
-        <h1 class="text-xl text-black font-medium mb-2">RKPD</h1>
+        <h1 class="text-xl text-black font-bold mb-2">RKPD</h1>
         <div class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-5 lg:gap-3 mb-8">
           <StatusCard v-for="(card, key) in rkpdCards" :key="key" :color="card.color" :value="data.singkat[key]" :label="card.label" @card-click="openModal(key)" />
         </div>
@@ -343,14 +343,14 @@ onMounted(() => {
 
       <div class="flex flex-col sm:flex-row gap-5 w-full">
         <div class="bg-white px-4 sm:px-9 py-3 sm:py-5 lg:p-8 rounded-3xl flex flex-col gap-3 text-white w-full">
-          <h1 class="text-xl text-black font-medium mb-2">KUA dan PPAS</h1>
+          <h1 class="text-xl text-black font-bold mb-2">KUA dan PPAS</h1>
           <div class="w-full grid grid-cols-1 sm:grid-cols-1 gap-5 sm:gap-5 lg:gap-3 mb-8">
             <StatusCard v-for="(card, key) in kuaPpasCards" :key="key" :color="card.color" :value="data.singkat[key]" :label="card.label" @card-click="openModal(key)" />
           </div>
         </div>
 
         <div class="bg-white px-4 sm:px-9 py-3 sm:py-5 lg:p-8 rounded-3xl flex flex-col gap-3 text-white w-full">
-          <h1 class="text-xl text-black font-medium mb-2">APBD</h1>
+          <h1 class="text-xl text-black font-bold mb-2">APBD</h1>
           <div class="w-full grid grid-cols-1 sm:grid-cols-1 gap-5 sm:gap-5 lg:gap-3 mb-8">
             <StatusCard v-for="(card, key) in apbdCards" :key="key" :color="card.color" :value="data.singkat[key]" :label="card.label" @card-click="openModal(key)" />
           </div>

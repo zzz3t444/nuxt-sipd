@@ -1,10 +1,22 @@
 <script lang="ts" setup>
-const attr = useAttrs();
-const selected = ref("");
+import { useAttrs, ref, computed, onMounted, watch } from "vue";
+
+interface Attrs {
+  render?: string[];
+  selectname?: string;
+  selectid?: string;
+}
+
+const attr = useAttrs() as Attrs;
+const selected = ref<string>("");
 const isActive = ref(false);
 const searchQuery = ref("");
+
 const filteredItems = computed(() => {
-  return attr.render.filter((item: string) => item.toLowerCase().includes(searchQuery.value.toLowerCase()));
+  if (Array.isArray(attr.render)) {
+    return attr.render.filter((item: string) => item.toLowerCase().includes(searchQuery.value.toLowerCase()));
+  }
+  return [];
 });
 
 const toggleDropdown = () => {
@@ -41,16 +53,16 @@ onMounted(() => {
       <option v-for="item in attr.render" :key="item" class="selectori" :value="item">{{ item }}</option>
     </select>
     <div class="w-full relative">
-      <span class="button w-[100%] text-black bg-[#f5f5f5] rounded-md flex justify-between items-center px-8 py-4 cursor-pointer" @click="toggleDropdown">
+      <span class="button w-[100%] text-black bg-[#f2f7f8] rounded-md flex justify-between items-center px-8 py-4 cursor-pointer" @click="toggleDropdown">
         <div>{{ selected ? selected : "Pilih item" }}</div>
         <i class="fa-solid fa-chevron-down"></i>
       </span>
-      <div v-show="isActive" class="w-full bg-[#f5f5f5] text-white absolute left-0 top-[100%] z-50 select">
+      <div v-show="isActive" class="w-full bg-white shadow-xl rounded-lg text-black absolute left-0 top-[100%] z-20 select">
         <div class="">
-          <input type="text" placeholder="Search..." class="search w-full px-4 py-2 border-b-2 bg-[#f5f5f5] outline-none" @input="filterItems" />
+          <input type="text" placeholder="Search..." class="search w-full px-4 py-2 border-b-2 bg-[#f2f7f8] outline-none" @input="filterItems" />
         </div>
         <div class="max-h-[200px] overflow-y-auto no-scrollbar">
-          <span v-for="item in filteredItems" :key="item" class="flex flex-col px-4 py-3 hover:bg-blue-500 selectitem" @click="selectItem(item)">{{ item }}</span>
+          <span v-for="item in filteredItems" :key="item" class="flex flex-col px-4 py-2 hover:text-white hover:bg-blue-500 selectitem" @click="selectItem(item)">{{ item }}</span>
         </div>
       </div>
     </div>

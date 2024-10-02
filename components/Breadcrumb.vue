@@ -14,7 +14,7 @@ export default {
 </script>
 
 <template>
-  <nav class="flex flex-row items-center text-sm text-white">
+  <nav class="flex flex-row items-center text-sm text-neutral-500">
     <NuxtLink to="/" class="mr-2 text-[#009efb] hover:text-[#7460e]">Dashboard</NuxtLink>
     <span v-if="province" class="mr-2">></span>
     <h1 v-if="province" class="breadcrumb-item" :class="{ active: !district }">
