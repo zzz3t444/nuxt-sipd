@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "name": "Aceh",
+    "checked": false,
+    "districts": [
+      { "name": "Banda Aceh", "checked": false },
+      { "name": "Aceh Besar", "checked": false }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Sumatera Utara",
+    "checked": false,
+    "districts": [
+      { "name": "Medan", "checked": false },
+      { "name": "Deli Serdang", "checked": false }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Kalimantan Tengah",
+    "checked": false,
+    "districts": [
+      { "name": "barito", "checked": false },
+      { "name": "kapuas", "checked": false },
+      { "name": "Gunung Mas", "checked": false },
+      { "name": "Katingan", "checked": false },
+      { "name": "Lamandau", "checked": false },
+      { "name": "Seruyan", "checked": false },
+      { "name": "Sukamara", "checked": false },
+      { "name": "Palangkaraya", "checked": false }
+    ]
+  }
+]

@@ -1,5 +1,4 @@
 <script setup>
-// onMounted
 import { ref, computed } from "vue";
 import { Chart } from "chart.js/auto";
 import StatusCard from "../components/StatusCard.vue";

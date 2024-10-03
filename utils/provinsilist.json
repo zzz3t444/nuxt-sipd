@@ -1,0 +1,144 @@
+[
+  {
+    "id": 1,
+    "name": "ANGKUTAN ORANG",
+    "slug": "ANGKUTAN ORANG",
+    "anggaranP": "Rp 1.000.000.000",
+    "anggaranK": "Rp 2.000.000.000",
+    "showDropdown": false,
+    "selectedProvinces": [],
+    "selectAll": false
+  },
+  {
+    "id": 2,
+    "name": "AUDITOR",
+    "slug": "AUDITOR",
+    "anggaranP": "Rp 1.500.000.000",
+    "anggaranK": "Rp 2.500.000.000",
+    "showDropdown": false,
+    "selectedProvinces": [],
+    "selectAll": false
+  },
+  {
+    "id": 3,
+    "name": "AUDITOR",
+    "slug": "AUDITOR",
+    "anggaranP": "Rp 1.500.000.000",
+    "anggaranK": "Rp 2.500.000.000",
+    "showDropdown": false,
+    "selectedProvinces": [],
+    "selectAll": false
+  },
+  {
+    "id": 4,
+    "name": "AUDITOR",
+    "slug": "AUDITOR",
+    "anggaranP": "Rp 1.500.000.000",
+    "anggaranK": "Rp 2.500.000.000",
+    "showDropdown": false,
+    "selectedProvinces": [],
+    "selectAll": false
+  },
+  {
+    "id": 5,
+    "name": "AUDITOR",
+    "slug": "AUDITOR",
+    "anggaranP": "Rp 1.500.000.000",
+    "anggaranK": "Rp 2.500.000.000",
+    "showDropdown": false,
+    "selectedProvinces": [],
+    "selectAll": false
+  },
+  {
+    "id": 6,
+    "name": "AUDITOR",
+    "slug": "AUDITOR",
+    "anggaranP": "Rp 1.500.000.000",
+    "anggaranK": "Rp 2.500.000.000",
+    "showDropdown": false,
+    "selectedProvinces": [],
+    "selectAll": false
+  },
+  {
+    "id": 7,
+    "name": "AUDITOR",
+    "slug": "AUDITOR",
+    "anggaranP": "Rp 1.500.000.000",
+    "anggaranK": "Rp 2.500.000.000",
+    "showDropdown": false,
+    "selectedProvinces": [],
+    "selectAll": false
+  },
+  {
+    "id": 8,
+    "name": "AUDITOR",
+    "slug": "AUDITOR",
+    "anggaranP": "Rp 1.500.000.000",
+    "anggaranK": "Rp 2.500.000.000",
+    "showDropdown": false,
+    "selectedProvinces": [],
+    "selectAll": false
+  },
+  {
+    "id": 9,
+    "name": "AUDITOR",
+    "slug": "AUDITOR",
+    "anggaranP": "Rp 1.500.000.000",
+    "anggaranK": "Rp 2.500.000.000",
+    "showDropdown": false,
+    "selectedProvinces": [],
+    "selectAll": false
+  },
+  {
+    "id": 10,
+    "name": "AUDITOR",
+    "slug": "AUDITOR",
+    "anggaranP": "Rp 1.500.000.000",
+    "anggaranK": "Rp 2.500.000.000",
+    "showDropdown": false,
+    "selectedProvinces": [],
+    "selectAll": false
+  },
+  {
+    "id": 11,
+    "name": "AUDITOR",
+    "slug": "AUDITOR",
+    "anggaranP": "Rp 1.500.000.000",
+    "anggaranK": "Rp 2.500.000.000",
+    "showDropdown": false,
+    "selectedProvinces": [],
+    "selectAll": false
+  },
+  {
+    "id": 12,
+    "name": "AUDITOR",
+    "slug": "AUDITOR",
+    "anggaranP": "Rp 1.500.000.000",
+    "anggaranK": "Rp 2.500.000.000",
+    "showDropdown": false,
+    "selectedProvinces": [],
+    "selectAll": false
+  },
+
+  {
+    "id": 13,
+    "name": "AUDITOR",
+    "slug": "AUDITOR",
+    "anggaranP": "Rp 1.500.000.000",
+    "anggaranK": "Rp 2.500.000.000",
+    "showDropdown": false,
+    "selectedProvinces": [],
+    "selectAll": false
+  },
+
+  {
+    "id": 14,
+    "name": "AUDITOR",
+    "slug": "AUDITOR",
+    "anggaranP": "Rp 1.500.000.000",
+    "anggaranK": "Rp 2.500.000.000",
+    "showDropdown": false,
+    "selectedProvinces": [],
+    "selectAll": false
+  }
+]

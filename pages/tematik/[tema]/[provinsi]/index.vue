@@ -93,9 +93,6 @@ watch(
     </div>
   </div>
 
-  <!-- <div class="pt-8 flex justify-end">
-    <Menu />
-  </div> -->
   <div class="mt-5 w-full bg-white py-12 px-7 rounded-2xl text-white">
     <h1 class="text-start font-bold text-black text-2xl">Per Tingkatan Pemerintah Daerah</h1>
     <div class="grid justify-center items-center gap-3 py-12">

@@ -1,95 +1,30 @@
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import { useRoute } from "vue-router";
+import provinsiListData from "@/utils/provinsilist.json";
+import provincesData from "@/utils/provinceName.json";
 
 const route = useRoute();
+const provinsiList = ref(provinsiListData);
+const provinces = ref(provincesData);
+const entriesCount = ref(10);
+const openDropdown = ref(null); // Track which dropdown is open
 
-const provinsiList = ref([
-  {
-    id: 1,
-    name: "ANGKUTAN ORANG",
-    slug: "ANGKUTAN ORANG",
-    anggaranP: "Rp 1.000.000.000",
-    anggaranK: "Rp 2.000.000.000",
-    showDropdown: false,
-    selectedProvinces: [],
-    selectAll: false,
-  },
-  {
-    id: 2,
-    name: "AUDITOR",
-    slug: "AUDITOR",
-    anggaranP: "Rp 1.500.000.000",
-    anggaranK: "Rp 2.500.000.000",
-    showDropdown: false,
-    selectedProvinces: [],
-    selectAll: false,
-  },
-  {
-    id: 3,
-    name: "BENCANA",
-    slug: "BENCANA",
-    anggaranP: "Rp 4.500.000.000",
-    anggaranK: "Rp 2.500.000.000",
-    showDropdown: false,
-    selectedProvinces: [],
-    selectAll: false,
-  },
-  {
-    id: 4,
-    name: "	SIGA",
-    slug: "	SIGA",
-    anggaranP: "Rp 4.500.000.000",
-    anggaranK: "Rp 2.400.000.000",
-    showDropdown: false,
-    selectedProvinces: [],
-    selectAll: false,
-  },
-]);
-
-const provinces = ref([
-  { id: 1, name: "Aceh", checked: false },
-  { id: 2, name: "Sumatera Utara", checked: false },
-  { id: 3, name: "Sumatera Barat", checked: false },
-  { id: 4, name: "Riau", checked: false },
-  { id: 5, name: "Jambi", checked: false },
-  { id: 6, name: "Sumatera Selatan", checked: false },
-  { id: 7, name: "Bengkulu", checked: false },
-  { id: 8, name: "Lampung", checked: false },
-  { id: 9, name: "Kepulauan Bangka Belitung", checked: false },
-  { id: 10, name: "Kepulauan Riau", checked: false },
-  { id: 11, name: "DKI Jakarta", checked: false },
-  { id: 12, name: "Jawa Barat", checked: false },
-  { id: 13, name: "Jawa Tengah", checked: false },
-  { id: 14, name: "DI Yogyakarta", checked: false },
-  { id: 15, name: "Jawa Timur", checked: false },
-  { id: 16, name: "Banten", checked: false },
-  { id: 17, name: "Bali", checked: false },
-  { id: 18, name: "Nusa Tenggara Barat", checked: false },
-  { id: 19, name: "Nusa Tenggara Timur", checked: false },
-  { id: 20, name: "Kalimantan Barat", checked: false },
-  { id: 21, name: "Kalimantan Tengah", checked: false },
-  { id: 22, name: "Kalimantan Selatan", checked: false },
-  { id: 23, name: "Kalimantan Timur", checked: false },
-  { id: 24, name: "Kalimantan Utara", checked: false },
-  { id: 25, name: "Sulawesi Utara", checked: false },
-  { id: 26, name: "Sulawesi Tengah", checked: false },
-  { id: 27, name: "Sulawesi Selatan", checked: false },
-  { id: 28, name: "Sulawesi Tenggara", checked: false },
-  { id: 29, name: "Gorontalo", checked: false },
-  { id: 30, name: "Sulawesi Barat", checked: false },
-  { id: 31, name: "Maluku", checked: false },
-  { id: 32, name: "Maluku Utara", checked: false },
-  { id: 33, name: "Papua Barat", checked: false },
-  { id: 34, name: "Papua", checked: false },
-  { id: 35, name: "Papua Tengah", checked: false },
-  { id: 36, name: "Papua Pegunungan", checked: false },
-  { id: 37, name: "Papua Selatan", checked: false },
-  { id: 38, name: "Papua Barat Daya", checked: false },
-]);
+const filteredProvinsiList = computed(() => {
+  return provinsiList.value.slice(0, entriesCount.value);
+});
 
 const toggleDropdown = (prov) => {
+  // Close the currently open dropdown if it's not the same one
+  if (openDropdown.value && openDropdown.value !== prov) {
+    openDropdown.value.showDropdown = false;
+  }
+
+  // Toggle the clicked dropdown
   prov.showDropdown = !prov.showDropdown;
+
+  // Update the openDropdown reference
+  openDropdown.value = prov.showDropdown ? prov : null;
 };
 
 const toggleCheckbox = (province, prov) => {
@@ -99,8 +34,20 @@ const toggleCheckbox = (province, prov) => {
     if (!prov.selectedProvinces.includes(province.name)) {
       prov.selectedProvinces.push(province.name);
     }
+
+    province.districts.forEach((district) => {
+      district.checked = true;
+      if (!prov.selectedDistricts.includes(district.name)) {
+        prov.selectedDistricts.push(district.name);
+      }
+    });
   } else {
     prov.selectedProvinces = prov.selectedProvinces.filter((name) => name !== province.name);
+
+    province.districts.forEach((district) => {
+      district.checked = false;
+      prov.selectedDistricts = prov.selectedDistricts.filter((name) => name !== district.name);
+    });
   }
 
   prov.selectAll = provinces.value.every((p) => p.checked);
@@ -114,8 +61,20 @@ const toggleSelectAll = (prov) => {
       if (!prov.selectedProvinces.includes(province.name)) {
         prov.selectedProvinces.push(province.name);
       }
+
+      province.districts.forEach((district) => {
+        district.checked = true;
+        if (!prov.selectedDistricts.includes(district.name)) {
+          prov.selectedDistricts.push(district.name);
+        }
+      });
     } else {
       prov.selectedProvinces = [];
+
+      province.districts.forEach((district) => {
+        district.checked = false;
+        prov.selectedDistricts = [];
+      });
     }
   });
 };
@@ -141,6 +100,21 @@ const toggleSelectAll = (prov) => {
     </div>
     <div class="bg-white w-full sm:px-5 py-4 rounded-2xl my-8">
       <div class="w-full bg-white px-7 rounded-lg text-black py-8">
+        <header class="flex items-center mb-5 gap-10">
+          <div class="flex items-center gap-4">
+            <span>Show</span>
+            <select name="entriescount" id="entriescount" class="py-2 px-3 w-[120px] outline-none rounded-md text-left bg-[#f2f7f8]" v-model="entriesCount">
+              <option value="10">10</option>
+              <option value="25">25</option>
+              <option value="50">50</option>
+              <option value="100">100</option>
+            </select>
+            <span>Entries</span>
+          </div>
+          <div>
+            <span>Showing 0 to {{ filteredProvinsiList.length }} of {{ provinsiList.length }} entries</span>
+          </div>
+        </header>
         <div class="w-full mt-10 overflow-x-auto">
           <table class="w-full">
             <thead>
@@ -153,7 +127,7 @@ const toggleSelectAll = (prov) => {
               </tr>
             </thead>
             <tbody>
-              <tr class="border-t-[1px]" v-for="(prov, index) in provinsiList" :key="prov.id">
+              <tr class="border-t-[1px]" v-for="(prov, index) in filteredProvinsiList" :key="prov.id">
                 <td class="py-3 px-5 text-center">{{ index + 1 }}</td>
                 <td class="py-3 px-5">{{ prov.name }}</td>
                 <td class="py-3 px-5 text-center">
@@ -162,24 +136,38 @@ const toggleSelectAll = (prov) => {
                       <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
                     </svg>
                   </button>
+
                   {{ prov.anggaranP }}
 
-                  <!-- Dropdown provinsi dengan checkbox -->
-                  <div v-if="prov.showDropdown" class="absolute bg-white border border-gray-300 shadow-lg mt-2 w-60 max-h-60 overflow-y-auto">
+                  <div v-if="prov.showDropdown" class="absolute bg-white border border-gray-300 shadow-lg mt-2 w-96 max-h-80 p-4 rounded-lg overflow-y-auto">
                     <ul>
                       <li class="flex items-center p-2 hover:bg-gray-100">
                         <input type="checkbox" :checked="prov.selectAll" @change="toggleSelectAll(prov)" />
                         <span class="ml-2">Select All</span>
                       </li>
-                      <li v-for="province in provinces" :key="province.id" class="flex items-center p-2 hover:bg-gray-100">
+                      <li v-for="province in provinces" :key="province.id" class="flex items-start p-2 hover:bg-gray-100">
                         <input type="checkbox" v-model="province.checked" @change="toggleCheckbox(province, prov)" />
                         <span class="ml-2">{{ province.name }}</span>
+
+                        <button @click="province.showDistricts = !province.showDistricts" class="ml-2 text-blue-500">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 inline">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </button>
+
+                        <div v-if="province.showDistricts" class="ml-4 bg-gray-100 p-2 rounded">
+                          <ul>
+                            <li v-for="district in province.districts" :key="district.name" class="flex items-center p-2 hover:bg-gray-200">
+                              <input type="checkbox" v-model="district.checked" />
+                              <span class="ml-2">{{ district.name }}</span>
+                            </li>
+                          </ul>
+                        </div>
                       </li>
                     </ul>
                   </div>
 
-                  <!-- Menampilkan provinsi yang dipilih -->
-                  <div v-if="prov.selectedProvinces.length" class="mt-1 text-sm text-gray-600">{{ prov.selectedProvinces.length }} terpilih</div>
+                  <div v-if="prov.selectedProvinces.length" class="mt-1 text-sm text-gray-600">{{ prov.selectedProvinces.length }} selected</div>
                 </td>
                 <td class="py-3 px-5 text-center">10%</td>
                 <td class="py-3 px-5 text-center">{{ prov.anggaranK }}</td>
@@ -192,7 +180,12 @@ const toggleSelectAll = (prov) => {
               </tr>
             </tbody>
           </table>
-          <h1 class="text-md mt-10 font-medium">Data Update : 20 Juli 2024</h1>
+          <div class="flex items-center justify-between p-10 pb-0">
+            <h1 class="text-md font-medium">Data Update : 20 Juli 2024</h1>
+            <nuxt-link to="">
+              <button class="py-2 px-6 bg-[#009efb] rounded-lg text-white hover:scale-95 duration-150 transition-all">Terapkan</button>
+            </nuxt-link>
+          </div>
         </div>
       </div>
     </div>
@@ -204,5 +197,17 @@ const toggleSelectAll = (prov) => {
 <style scoped>
 .absolute {
   position: absolute;
+}
+
+.max-h-80 {
+  max-height: 30rem;
+}
+
+.w-96 {
+  width: 44rem;
+}
+
+.p-4 {
+  padding: 1rem;
 }
 </style>
