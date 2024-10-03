@@ -160,7 +160,7 @@ onMounted(() => {
                 <div class="text-neutral-600 hidden md:block text-center small-cap md:group-hover:hidden">
                   <i class="fa-solid fa-tag"></i>
                 </div>
-                <ul v-show="isKabKotaSubmenuOpen" class="flex flex-col gap-7 py-7 px-5">
+                <ul v-show="isKabKotaSubmenuOpen" class="flex flex-col gap-5 py-7 px-5">
                   <li class="">
                     <NuxtLink to="/dashboard/aceh/rekap">
                       <div class="text-neutral-600 block md:hidden text-nowrap cap px-7 md:group-hover:block">Rekap Aceh</div>
@@ -169,7 +169,7 @@ onMounted(() => {
                   </li>
                   <li class="">
                     <NuxtLink to="/dashboard/aceh/aceh selatan">
-                      <div class="text-neutral-600 block md:hidden text-nowrap cap px-7 md:group-hover:block">aceh selatan</div>
+                      <div class="text-neutral-600 block md:hidden text-nowrap cap px-7 md:group-hover:block">Aceh Selatan</div>
                       <div class="text-neutral-600 hidden md:block text-center small-cap md:group-hover:hidden"></div>
                     </NuxtLink>
                   </li>

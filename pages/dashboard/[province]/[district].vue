@@ -619,7 +619,7 @@ onMounted(() => {
   <div>
     <div class="flex justify-between items-center">
       <div class="">
-        <h1 class="text-2xl text-white">
+        <h1 class="text-2xl text-black">
           {{ $route.params.province.toUpperCase() }}
         </h1>
 
@@ -635,7 +635,7 @@ onMounted(() => {
       <div class="flex flex-col gap-5 py-5">
         <div class="flex gap-3 flex-col lg:flex-row">
           <div class="bg-[#f9fafb] px-4 sm:px-9 py-3 sm:py-5 lg:p-8 rounded-xl flex flex-col gap-3 text-white w-full">
-            <h1 class="text-xl text-white font-semibold mb-2">RKPD</h1>
+            <h1 class="text-xl text-black font-semibold mb-2">RKPD</h1>
             <div class="w-full grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-5 lg:gap-6 mb-8">
               <StatusCard v-for="(card, key) in rkpdCards" :key="key" :color="card.color" :value="data.singkat[key]" :label="card.label" @card-click="openModal(key)" />
             </div>
