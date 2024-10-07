@@ -6,6 +6,7 @@ import temaListData from "../../utils/TematikList.json";
 const temaList = ref(temaListData);
 const selectedRows = ref([]);
 const selectedYear = ref("2024");
+const selectedEntries = ref(25); // Default entries to show
 const years = [2025, 2024, 2023, 2022, 2021, 2020];
 
 const isAllSelected = computed(() => selectedRows.value.length === filteredTemaList.value.length && selectedRows.value.length > 0);
@@ -22,6 +23,11 @@ const filteredTemaList = computed(() => {
   return selectedYear.value === "2025" ? [] : temaList.value;
 });
 
+// New computed property to slice the filteredTemaList
+const displayedTemaList = computed(() => {
+  return filteredTemaList.value.slice(0, selectedEntries.value);
+});
+
 const updateYear = () => {
   console.log("Year updated to:", selectedYear.value);
   selectedRows.value = [];
@@ -31,7 +37,6 @@ const router = useRouter();
 
 const applySelection = () => {
   if (selectedRows.value.length > 0) {
-    // Redirect to the new page with the selected IDs
     router.push({ name: "SelectedTemas", query: { selectedIds: selectedRows.value.join(",") } });
   } else {
     alert("Please select at least one item to apply.");
@@ -59,9 +64,24 @@ const applySelection = () => {
 
   <div class="bg-white w-full sm:px-5 py-4 rounded-2xl my-8 text-white">
     <div class="w-full bg-white px-7 rounded-lg text-black py-8">
-      <EntriesValue />
+      <header class="flex items-center mb-5 gap-10">
+        <div class="flex items-center gap-4">
+          <span>Show</span>
+          <select v-model="selectedEntries" class="py-2 px-3 w-[120px] outline-none rounded-md text-left bg-[#f2f7f8]">
+            <option value="10">10</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="75">75</option>
+            <option value="100" selected>100</option>
+          </select>
+          <span>Entries</span>
+        </div>
+        <div>
+          <span>Showing {{ displayedTemaList.length }} of {{ filteredTemaList.length }} entries</span>
+        </div>
+      </header>
       <div class="w-full mt-10 overflow-x-auto">
-        <table class="w-full" v-if="filteredTemaList.length > 0">
+        <table class="w-full" v-if="displayedTemaList.length > 0">
           <thead>
             <tr>
               <th class="px-4">
@@ -78,7 +98,7 @@ const applySelection = () => {
             </tr>
           </thead>
           <tbody>
-            <tr class="border-t-[1px]" v-for="(tema, index) in filteredTemaList" :key="tema.id">
+            <tr class="border-t-[1px]" v-for="(tema, index) in displayedTemaList" :key="tema.id">
               <td class="py-3 px-5 text-center">
                 <input type="checkbox" :value="tema.id" v-model="selectedRows" />
               </td>
