@@ -5,7 +5,28 @@
     "checked": false,
     "districts": [
       { "name": "Banda Aceh", "checked": false },
-      { "name": "Aceh Besar", "checked": false }
+      { "name": "Aceh Besar", "checked": false },
+      { "name": "Aceh Barat", "checked": false },
+      { "name": "Aceh Barat Daya", "checked": false },
+      { "name": "Aceh Jaya", "checked": false },
+      { "name": "Aceh Selatan", "checked": false },
+      { "name": "Aceh Singkil", "checked": false },
+      { "name": "Aceh Tamiang", "checked": false },
+      { "name": "Aceh Tengah", "checked": false },
+      { "name": "Aceh Tenggara", "checked": false },
+      { "name": "Aceh Timur", "checked": false },
+      { "name": "Aceh Utara", "checked": false },
+      { "name": "Bener Meriah", "checked": false },
+      { "name": "Bireuen", "checked": false },
+      { "name": "Gayo Lues", "checked": false },
+      { "name": "Langsa", "checked": false },
+      { "name": "Lhokseumawe", "checked": false },
+      { "name": "Nagan Raya", "checked": false },
+      { "name": "Pidie", "checked": false },
+      { "name": "Pidie Jaya", "checked": false },
+      { "name": "Sabang", "checked": false },
+      { "name": "Simeulue", "checked": false },
+      { "name": "Subulussalam", "checked": false }
     ]
   },
   {
@@ -14,22 +35,725 @@
     "checked": false,
     "districts": [
       { "name": "Medan", "checked": false },
-      { "name": "Deli Serdang", "checked": false }
+      { "name": "Deli Serdang", "checked": false },
+      { "name": "Asahan", "checked": false },
+      { "name": "Batubara", "checked": false },
+      { "name": "Binjai", "checked": false },
+      { "name": "Dairi", "checked": false },
+      { "name": "Humbang Hasundutan", "checked": false },
+      { "name": "Karo", "checked": false },
+      { "name": "Labuhanbatu", "checked": false },
+      { "name": "Labuhanbatu Selatan", "checked": false },
+      { "name": "Labuhanbatu Utara", "checked": false },
+      { "name": "Langkat", "checked": false },
+      { "name": "Mandailing Natal", "checked": false },
+      { "name": "Nias", "checked": false },
+      { "name": "Nias Barat", "checked": false },
+      { "name": "Nias Selatan", "checked": false },
+      { "name": "Nias Utara", "checked": false },
+      { "name": "Padang Lawas", "checked": false },
+      { "name": "Padang Lawas Utara", "checked": false },
+      { "name": "Pematangsiantar", "checked": false },
+      { "name": "Samosir", "checked": false },
+      { "name": "Serdang Bedagai", "checked": false },
+      { "name": "Sibolga", "checked": false },
+      { "name": "Simalungun", "checked": false },
+      { "name": "Tanjungbalai", "checked": false },
+      { "name": "Tapanuli Selatan", "checked": false },
+      { "name": "Tapanuli Tengah", "checked": false },
+      { "name": "Tapanuli Utara", "checked": false },
+      { "name": "Tebing Tinggi", "checked": false },
+      { "name": "Toba", "checked": false }
     ]
   },
   {
     "id": 3,
+    "name": "Sumatera Barat",
+    "checked": false,
+    "districts": [
+      { "name": "Padang", "checked": false },
+      { "name": "Padang Pariaman", "checked": false },
+      { "name": "Agam", "checked": false },
+      { "name": "Bukittinggi", "checked": false },
+      { "name": "Lima Puluh Kota", "checked": false },
+      { "name": "Pesisir Selatan", "checked": false },
+      { "name": "Pasaman", "checked": false },
+      { "name": "Pasaman Barat", "checked": false },
+      { "name": "Sawahlunto", "checked": false },
+      { "name": "Solok", "checked": false },
+      { "name": "Solok Selatan", "checked": false },
+      { "name": "Sijunjung", "checked": false },
+      { "name": "Dharmasraya", "checked": false },
+      { "name": "Tanah Datar", "checked": false },
+      { "name": "Pariaman", "checked": false },
+      { "name": "Payakumbuh", "checked": false }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Riau",
+    "checked": false,
+    "districts": [
+      { "name": "Pekanbaru", "checked": false },
+      { "name": "Kampar", "checked": false },
+      { "name": "Indragiri Hulu", "checked": false },
+      { "name": "Indragiri Hilir", "checked": false },
+      { "name": "Rokan Hulu", "checked": false },
+      { "name": "Rokan Hilir", "checked": false },
+      { "name": "Siak", "checked": false },
+      { "name": "Pelalawan", "checked": false },
+      { "name": "Dumai", "checked": false },
+      { "name": "Kuantan Singingi", "checked": false },
+      { "name": "Bengkalis", "checked": false },
+      { "name": "Meranti", "checked": false }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Kepulauan Riau",
+    "checked": false,
+    "districts": [
+      { "name": "Batam", "checked": false },
+      { "name": "Bintan", "checked": false },
+      { "name": "Karimun", "checked": false },
+      { "name": "Kepulauan Anambas", "checked": false },
+      { "name": "Lingga", "checked": false },
+      { "name": "Natuna", "checked": false },
+      { "name": "Tanjungpinang", "checked": false }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Jambi",
+    "checked": false,
+    "districts": [
+      { "name": "Jambi", "checked": false },
+      { "name": "Batanghari", "checked": false },
+      { "name": "Bungo", "checked": false },
+      { "name": "Kerinci", "checked": false },
+      { "name": "Merangin", "checked": false },
+      { "name": "Muaro Jambi", "checked": false },
+      { "name": "Sarolangun", "checked": false },
+      { "name": "Tanjung Jabung Barat", "checked": false },
+      { "name": "Tanjung Jabung Timur", "checked": false },
+      { "name": "Tebo", "checked": false },
+      { "name": "Sungai Penuh", "checked": false }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Sumatera Selatan",
+    "checked": false,
+    "districts": [
+      { "name": "Palembang", "checked": false },
+      { "name": "Banyuasin", "checked": false },
+      { "name": "Empat Lawang", "checked": false },
+      { "name": "Lahat", "checked": false },
+      { "name": "Lubuklinggau", "checked": false },
+      { "name": "Muara Enim", "checked": false },
+      { "name": "Musi Banyuasin", "checked": false },
+      { "name": "Musi Rawas", "checked": false },
+      { "name": "Musi Rawas Utara", "checked": false },
+      { "name": "Ogan Ilir", "checked": false },
+      { "name": "Ogan Komering Ilir", "checked": false },
+      { "name": "Ogan Komering Ulu", "checked": false },
+      { "name": "Ogan Komering Ulu Selatan", "checked": false },
+      { "name": "Ogan Komering Ulu Timur", "checked": false },
+      { "name": "Pagar Alam", "checked": false },
+      { "name": "Prabumulih", "checked": false },
+      { "name": "Pali", "checked": false }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Bengkulu",
+    "checked": false,
+    "districts": [
+      { "name": "Bengkulu", "checked": false },
+      { "name": "Bengkulu Selatan", "checked": false },
+      { "name": "Bengkulu Tengah", "checked": false },
+      { "name": "Bengkulu Utara", "checked": false },
+      { "name": "Kaur", "checked": false },
+      { "name": "Kepahiang", "checked": false },
+      { "name": "Lebong", "checked": false },
+      { "name": "Muko-Muko", "checked": false },
+      { "name": "Rejang Lebong", "checked": false },
+      { "name": "Seluma", "checked": false }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Lampung",
+    "checked": false,
+    "districts": [
+      { "name": "Bandar Lampung", "checked": false },
+      { "name": "Lampung Barat", "checked": false },
+      { "name": "Lampung Selatan", "checked": false },
+      { "name": "Lampung Tengah", "checked": false },
+      { "name": "Lampung Timur", "checked": false },
+      { "name": "Lampung Utara", "checked": false },
+      { "name": "Mesuji", "checked": false },
+      { "name": "Metro", "checked": false },
+      { "name": "Pesawaran", "checked": false },
+      { "name": "Pesisir Barat", "checked": false },
+      { "name": "Pringsewu", "checked": false },
+      { "name": "Tanggamus", "checked": false },
+      { "name": "Tulang Bawang", "checked": false },
+      { "name": "Tulang Bawang Barat", "checked": false },
+      { "name": "Way Kanan", "checked": false }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Bangka Belitung",
+    "checked": false,
+    "districts": [
+      { "name": "Bangka", "checked": false },
+      { "name": "Bangka Barat", "checked": false },
+      { "name": "Bangka Selatan", "checked": false },
+      { "name": "Bangka Tengah", "checked": false },
+      { "name": "Belitung", "checked": false },
+      { "name": "Belitung Timur", "checked": false },
+      { "name": "Pangkalpinang", "checked": false }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Banten",
+    "checked": false,
+    "districts": [
+      { "name": "Cilegon", "checked": false },
+      { "name": "Lebak", "checked": false },
+      { "name": "Pandeglang", "checked": false },
+      { "name": "Serang", "checked": false },
+      { "name": "Tangerang", "checked": false },
+      { "name": "Tangerang Selatan", "checked": false }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "DKI Jakarta",
+    "checked": false,
+    "districts": [
+      { "name": "Jakarta Barat", "checked": false },
+      { "name": "Jakarta Pusat", "checked": false },
+      { "name": "Jakarta Selatan", "checked": false },
+      { "name": "Jakarta Timur", "checked": false },
+      { "name": "Jakarta Utara", "checked": false }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Jawa Barat",
+    "checked": false,
+    "districts": [
+      { "name": "Bandung", "checked": false },
+      { "name": "Bandung Barat", "checked": false },
+      { "name": "Bekasi", "checked": false },
+      { "name": "Bogor", "checked": false },
+      { "name": "Ciamis", "checked": false },
+      { "name": "Cianjur", "checked": false },
+      { "name": "Cimahi", "checked": false },
+      { "name": "Cirebon", "checked": false },
+      { "name": "Garut", "checked": false },
+      { "name": "Indramayu", "checked": false },
+      { "name": "Karawang", "checked": false },
+      { "name": "Kuningan", "checked": false },
+      { "name": "Majalengka", "checked": false },
+      { "name": "Pangandaran", "checked": false },
+      { "name": "Purwakarta", "checked": false },
+      { "name": "Subang", "checked": false },
+      { "name": "Sukabumi", "checked": false },
+      { "name": "Sumedang", "checked": false },
+      { "name": "Tasikmalaya", "checked": false },
+      { "name": "Depok", "checked": false }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Jawa Tengah",
+    "checked": false,
+    "districts": [
+      { "name": "Magelang", "checked": false },
+      { "name": "Pekalongan", "checked": false },
+      { "name": "Purworejo", "checked": false },
+      { "name": "Salatiga", "checked": false },
+      { "name": "Semarang", "checked": false },
+      { "name": "Solo", "checked": false },
+      { "name": "Sragen", "checked": false },
+      { "name": "Tegal", "checked": false },
+      { "name": "Temanggung", "checked": false },
+      { "name": "Wonogiri", "checked": false },
+      { "name": "Wonosobo", "checked": false },
+      { "name": "Rembang", "checked": false },
+      { "name": "Pati", "checked": false },
+      { "name": "Jepara", "checked": false },
+      { "name": "Demak", "checked": false },
+      { "name": "Blora", "checked": false },
+      { "name": "Grobogan", "checked": false },
+      { "name": "Batang", "checked": false },
+      { "name": "Pemalang", "checked": false },
+      { "name": "Brebes", "checked": false },
+      { "name": "Kendal", "checked": false },
+      { "name": "Kudus", "checked": false }
+    ]
+  },
+  {
+    "id": 15,
+    "name": "DI Yogyakarta",
+    "checked": false,
+    "districts": [
+      { "name": "Bantul", "checked": false },
+      { "name": "Gunungkidul", "checked": false },
+      { "name": "Kulon Progo", "checked": false },
+      { "name": "Sleman", "checked": false },
+      { "name": "Yogyakarta", "checked": false }
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Jawa Timur",
+    "checked": false,
+    "districts": [
+      { "name": "Surabaya", "checked": false },
+      { "name": "Banyuwangi", "checked": false },
+      { "name": "Blitar", "checked": false },
+      { "name": "Bojonegoro", "checked": false },
+      { "name": "Bondowoso", "checked": false },
+      { "name": "Gresik", "checked": false },
+      { "name": "Jember", "checked": false },
+      { "name": "Jombang", "checked": false },
+      { "name": "Kediri", "checked": false },
+      { "name": "Lamongan", "checked": false },
+      { "name": "Lumajang", "checked": false },
+      { "name": "Madiun", "checked": false },
+      { "name": "Magetan", "checked": false },
+      { "name": "Malang", "checked": false },
+      { "name": "Mojokerto", "checked": false },
+      { "name": "Nganjuk", "checked": false },
+      { "name": "Ngawi", "checked": false },
+      { "name": "Pacitan", "checked": false },
+      { "name": "Pamekasan", "checked": false },
+      { "name": "Pasuruan", "checked": false },
+      { "name": "Ponorogo", "checked": false },
+      { "name": "Probolinggo", "checked": false },
+      { "name": "Sampang", "checked": false },
+      { "name": "Sidoarjo", "checked": false },
+      { "name": "Situbondo", "checked": false },
+      { "name": "Sumenep", "checked": false },
+      { "name": "Trenggalek", "checked": false },
+      { "name": "Tuban", "checked": false },
+      { "name": "Tulungagung", "checked": false }
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Bali",
+    "checked": false,
+    "districts": [
+      { "name": "Denpasar", "checked": false },
+      { "name": "Badung", "checked": false },
+      { "name": "Bangli", "checked": false },
+      { "name": "Buleleng", "checked": false },
+      { "name": "Gianyar", "checked": false },
+      { "name": "Jembrana", "checked": false },
+      { "name": "Karangasem", "checked": false },
+      { "name": "Klungkung", "checked": false },
+      { "name": "Tabanan", "checked": false }
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Nusa Tenggara Barat",
+    "checked": false,
+    "districts": [
+      { "name": "Bima", "checked": false },
+      { "name": "Dompu", "checked": false },
+      { "name": "Lombok Barat", "checked": false },
+      { "name": "Lombok Tengah", "checked": false },
+      { "name": "Lombok Timur", "checked": false },
+      { "name": "Lombok Utara", "checked": false },
+      { "name": "Mataram", "checked": false },
+      { "name": "Sumbawa", "checked": false },
+      { "name": "Sumbawa Barat", "checked": false }
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Nusa Tenggara Timur",
+    "checked": false,
+    "districts": [
+      { "name": "Alor", "checked": false },
+      { "name": "Belu", "checked": false },
+      { "name": "Ende", "checked": false },
+      { "name": "Flores Timur", "checked": false },
+      { "name": "Kupang", "checked": false },
+      { "name": "Lembata", "checked": false },
+      { "name": "Malaka", "checked": false },
+      { "name": "Manggarai", "checked": false },
+      { "name": "Manggarai Barat", "checked": false },
+      { "name": "Manggarai Timur", "checked": false },
+      { "name": "Nagekeo", "checked": false },
+      { "name": "Ngada", "checked": false },
+      { "name": "Rote Ndao", "checked": false },
+      { "name": "Sabu Raijua", "checked": false },
+      { "name": "Sikka", "checked": false },
+      { "name": "Sumba Barat", "checked": false },
+      { "name": "Sumba Barat Daya", "checked": false },
+      { "name": "Sumba Tengah", "checked": false },
+      { "name": "Sumba Timur", "checked": false },
+      { "name": "Timor Tengah Selatan", "checked": false },
+      { "name": "Timor Tengah Utara", "checked": false }
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Kalimantan Barat",
+    "checked": false,
+    "districts": [
+      { "name": "Bengkayang", "checked": false },
+      { "name": "Kapuas Hulu", "checked": false },
+      { "name": "Kayong Utara", "checked": false },
+      { "name": "Ketapang", "checked": false },
+      { "name": "Kubu Raya", "checked": false },
+      { "name": "Landak", "checked": false },
+      { "name": "Melawi", "checked": false },
+      { "name": "Mempawah", "checked": false },
+      { "name": "Pontianak", "checked": false },
+      { "name": "Sambas", "checked": false },
+      { "name": "Sanggau", "checked": false },
+      { "name": "Sekadau", "checked": false },
+      { "name": "Singkawang", "checked": false },
+      { "name": "Sintang", "checked": false }
+    ]
+  },
+  {
+    "id": 21,
     "name": "Kalimantan Tengah",
     "checked": false,
     "districts": [
-      { "name": "barito", "checked": false },
-      { "name": "kapuas", "checked": false },
+      { "name": "Barito Selatan", "checked": false },
+      { "name": "Barito Timur", "checked": false },
+      { "name": "Barito Utara", "checked": false },
       { "name": "Gunung Mas", "checked": false },
+      { "name": "Kapuas", "checked": false },
       { "name": "Katingan", "checked": false },
+      { "name": "Kotawaringin Barat", "checked": false },
+      { "name": "Kotawaringin Timur", "checked": false },
       { "name": "Lamandau", "checked": false },
-      { "name": "Seruyan", "checked": false },
+      { "name": "Murung Raya", "checked": false },
+      { "name": "Palangka Raya", "checked": false },
+      { "name": "Pulang Pisau", "checked": false },
       { "name": "Sukamara", "checked": false },
-      { "name": "Palangkaraya", "checked": false }
+      { "name": "Seruyan", "checked": false }
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Kalimantan Selatan",
+    "checked": false,
+    "districts": [
+      { "name": "Balangan", "checked": false },
+      { "name": "Banjar", "checked": false },
+      { "name": "Banjarbaru", "checked": false },
+      { "name": "Banjarmasin", "checked": false },
+      { "name": "Barito Kuala", "checked": false },
+      { "name": "Hulu Sungai Selatan", "checked": false },
+      { "name": "Hulu Sungai Tengah", "checked": false },
+      { "name": "Hulu Sungai Utara", "checked": false },
+      { "name": "Kotabaru", "checked": false },
+      { "name": "Tabalong", "checked": false },
+      { "name": "Tanah Bumbu", "checked": false },
+      { "name": "Tanah Laut", "checked": false }
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Kalimantan Timur",
+    "checked": false,
+    "districts": [
+      { "name": "Balikpapan", "checked": false },
+      { "name": "Berau", "checked": false },
+      { "name": "Bontang", "checked": false },
+      { "name": "Kutai Barat", "checked": false },
+      { "name": "Kutai Kartanegara", "checked": false },
+      { "name": "Kutai Timur", "checked": false },
+      { "name": "Mahakam Ulu", "checked": false },
+      { "name": "Paser", "checked": false },
+      { "name": "Penajam Paser Utara", "checked": false },
+      { "name": "Samarinda", "checked": false }
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Kalimantan Utara",
+    "checked": false,
+    "districts": [
+      { "name": "Bulungan", "checked": false },
+      { "name": "Malinau", "checked": false },
+      { "name": "Nunukan", "checked": false },
+      { "name": "Tana Tidung", "checked": false },
+      { "name": "Tarakan", "checked": false }
+    ]
+  },
+  {
+    "id": 25,
+    "name": "Sulawesi Utara",
+    "checked": false,
+    "districts": [
+      { "name": "Bitung", "checked": false },
+      { "name": "Bolaang Mongondow", "checked": false },
+      { "name": "Bolaang Mongondow Selatan", "checked": false },
+      { "name": "Bolaang Mongondow Timur", "checked": false },
+      { "name": "Bolaang Mongondow Utara", "checked": false },
+      { "name": "Kepulauan Sangihe", "checked": false },
+      { "name": "Kepulauan Siau Tagulandang Biaro", "checked": false },
+      { "name": "Kepulauan Talaud", "checked": false },
+      { "name": "Kotamobagu", "checked": false },
+      { "name": "Manado", "checked": false },
+      { "name": "Minahasa", "checked": false },
+      { "name": "Minahasa Selatan", "checked": false },
+      { "name": "Minahasa Tenggara", "checked": false },
+      { "name": "Minahasa Utara", "checked": false }
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Sulawesi Tengah",
+    "checked": false,
+    "districts": [
+      { "name": "Banggai", "checked": false },
+      { "name": "Banggai Kepulauan", "checked": false },
+      { "name": "Banggai Laut", "checked": false },
+      { "name": "Buol", "checked": false },
+      { "name": "Donggala", "checked": false },
+      { "name": "Morowali", "checked": false },
+      { "name": "Morowali Utara", "checked": false },
+      { "name": "Parigi Moutong", "checked": false },
+      { "name": "Poso", "checked": false },
+      { "name": "Sigi", "checked": false },
+      { "name": "Tojo Una-Una", "checked": false },
+      { "name": "Toli-Toli", "checked": false },
+      { "name": "Palu", "checked": false }
+    ]
+  },
+  {
+    "id": 27,
+    "name": "Sulawesi Selatan",
+    "checked": false,
+    "districts": [
+      { "name": "Bantaeng", "checked": false },
+      { "name": "Barru", "checked": false },
+      { "name": "Bone", "checked": false },
+      { "name": "Bulukumba", "checked": false },
+      { "name": "Enrekang", "checked": false },
+      { "name": "Gowa", "checked": false },
+      { "name": "Jeneponto", "checked": false },
+      { "name": "Kepulauan Selayar", "checked": false },
+      { "name": "Luwu", "checked": false },
+      { "name": "Luwu Timur", "checked": false },
+      { "name": "Luwu Utara", "checked": false },
+      { "name": "Makassar", "checked": false },
+      { "name": "Maros", "checked": false },
+      { "name": "Palopo", "checked": false },
+      { "name": "Pangkajene dan Kepulauan", "checked": false },
+      { "name": "Parepare", "checked": false },
+      { "name": "Pinrang", "checked": false },
+      { "name": "Sidenreng Rappang", "checked": false },
+      { "name": "Sinjai", "checked": false },
+      { "name": "Soppeng", "checked": false },
+      { "name": "Takalar", "checked": false },
+      { "name": "Tana Toraja", "checked": false },
+      { "name": "Toraja Utara", "checked": false },
+      { "name": "Wajo", "checked": false }
+    ]
+  },
+  {
+    "id": 28,
+    "name": "Sulawesi Tenggara",
+    "checked": false,
+    "districts": [
+      { "name": "Bau-Bau", "checked": false },
+      { "name": "Bombana", "checked": false },
+      { "name": "Buton", "checked": false },
+      { "name": "Buton Selatan", "checked": false },
+      { "name": "Buton Tengah", "checked": false },
+      { "name": "Buton Utara", "checked": false },
+      { "name": "Konawe", "checked": false },
+      { "name": "Konawe Kepulauan", "checked": false },
+      { "name": "Konawe Selatan", "checked": false },
+      { "name": "Konawe Utara", "checked": false },
+      { "name": "Kolaka", "checked": false },
+      { "name": "Kolaka Timur", "checked": false },
+      { "name": "Kolaka Utara", "checked": false },
+      { "name": "Muna", "checked": false },
+      { "name": "Muna Barat", "checked": false },
+      { "name": "Wakatobi", "checked": false }
+    ]
+  },  {
+    "id": 29,
+    "name": "Gorontalo",
+    "checked": false,
+    "districts": [
+      { "name": "Boalemo", "checked": false },
+      { "name": "Bone Bolango", "checked": false },
+      { "name": "Gorontalo", "checked": false },
+      { "name": "Gorontalo Utara", "checked": false },
+      { "name": "Pohuwato", "checked": false }
+    ]
+  },
+  {
+    "id": 30,
+    "name": "Sulawesi Barat",
+    "checked": false,
+    "districts": [
+      { "name": "Majene", "checked": false },
+      { "name": "Mamasa", "checked": false },
+      { "name": "Mamuju", "checked": false },
+      { "name": "Mamuju Tengah", "checked": false },
+      { "name": "Pasangkayu", "checked": false },
+      { "name": "Polewali Mandar", "checked": false }
+    ]
+  },
+  {
+    "id": 31,
+    "name": "Maluku",
+    "checked": false,
+    "districts": [
+      { "name": "Ambon", "checked": false },
+      { "name": "Buru", "checked": false },
+      { "name": "Buru Selatan", "checked": false },
+      { "name": "Kepulauan Aru", "checked": false },
+      { "name": "Maluku Barat Daya", "checked": false },
+      { "name": "Maluku Tengah", "checked": false },
+      { "name": "Maluku Tenggara", "checked": false },
+      { "name": "Maluku Tenggara Barat", "checked": false },
+      { "name": "Seram Bagian Barat", "checked": false },
+      { "name": "Seram Bagian Timur", "checked": false },
+      { "name": "Tual", "checked": false }
+    ]
+  },
+  {
+    "id": 32,
+    "name": "Maluku Utara",
+    "checked": false,
+    "districts": [
+      { "name": "Halmahera Barat", "checked": false },
+      { "name": "Halmahera Selatan", "checked": false },
+      { "name": "Halmahera Tengah", "checked": false },
+      { "name": "Halmahera Timur", "checked": false },
+      { "name": "Halmahera Utara", "checked": false },
+      { "name": "Kepulauan Sula", "checked": false },
+      { "name": "Pulau Morotai", "checked": false },
+      { "name": "Pulau Taliabu", "checked": false },
+      { "name": "Ternate", "checked": false },
+      { "name": "Tidore Kepulauan", "checked": false }
+    ]
+  },
+  {
+    "id": 33,
+    "name": "Papua",
+    "checked": false,
+    "districts": [
+      { "name": "Asmat", "checked": false },
+      { "name": "Biak Numfor", "checked": false },
+      { "name": "Boven Digoel", "checked": false },
+      { "name": "Deiyai", "checked": false },
+      { "name": "Dogiyai", "checked": false },
+      { "name": "Intan Jaya", "checked": false },
+      { "name": "Jayapura", "checked": false },
+      { "name": "Jayawijaya", "checked": false },
+      { "name": "Keerom", "checked": false },
+      { "name": "Lanny Jaya", "checked": false },
+      { "name": "Mamberamo Raya", "checked": false },
+      { "name": "Mamberamo Tengah", "checked": false },
+      { "name": "Mappi", "checked": false },
+      { "name": "Merauke", "checked": false },
+      { "name": "Mimika", "checked": false },
+      { "name": "Nabire", "checked": false },
+      { "name": "Nduga", "checked": false },
+      { "name": "Paniai", "checked": false },
+      { "name": "Pegunungan Bintang", "checked": false },
+      { "name": "Puncak", "checked": false },
+      { "name": "Puncak Jaya", "checked": false },
+      { "name": "Sarmi", "checked": false },
+      { "name": "Supiori", "checked": false },
+      { "name": "Tolikara", "checked": false },
+      { "name": "Waropen", "checked": false },
+      { "name": "Yahukimo", "checked": false },
+      { "name": "Yalimo", "checked": false }
+    ]
+  },
+  {
+    "id": 34,
+    "name": "Papua Barat",
+    "checked": false,
+    "districts": [
+      { "name": "Fakfak", "checked": false },
+      { "name": "Kaimana", "checked": false },
+      { "name": "Manokwari", "checked": false },
+      { "name": "Manokwari Selatan", "checked": false },
+      { "name": "Maybrat", "checked": false },
+      { "name": "Pegunungan Arfak", "checked": false },
+      { "name": "Raja Ampat", "checked": false },
+      { "name": "Sorong", "checked": false },
+      { "name": "Sorong Selatan", "checked": false },
+      { "name": "Tambrauw", "checked": false },
+      { "name": "Teluk Bintuni", "checked": false },
+      { "name": "Teluk Wondama", "checked": false }
+    ]
+  },
+  {
+    "id": 35,
+    "name": "Papua Selatan",
+    "checked": false,
+    "districts": [
+      { "name": "Asmat", "checked": false },
+      { "name": "Boven Digoel", "checked": false },
+      { "name": "Mappi", "checked": false },
+      { "name": "Merauke", "checked": false }
+    ]
+  },
+  {
+    "id": 36,
+    "name": "Papua Tengah",
+    "checked": false,
+    "districts": [
+      { "name": "Deiyai", "checked": false },
+      { "name": "Dogiyai", "checked": false },
+      { "name": "Intan Jaya", "checked": false },
+      { "name": "Mimika", "checked": false },
+      { "name": "Nabire", "checked": false },
+      { "name": "Paniai", "checked": false },
+      { "name": "Puncak", "checked": false },
+      { "name": "Puncak Jaya", "checked": false }
+    ]
+  },
+  {
+    "id": 37,
+    "name": "Papua Pegunungan",
+    "checked": false,
+    "districts": [
+      { "name": "Jayawijaya", "checked": false },
+      { "name": "Lanny Jaya", "checked": false },
+      { "name": "Mamberamo Tengah", "checked": false },
+      { "name": "Nduga", "checked": false },
+      { "name": "Pegunungan Bintang", "checked": false },
+      { "name": "Tolikara", "checked": false },
+      { "name": "Yahukimo", "checked": false },
+      { "name": "Yalimo", "checked": false }
+    ]
+  },
+  {
+    "id": 38,
+    "name": "Papua Barat Daya",
+    "checked": false,
+    "districts": [
+      { "name": "Maybrat", "checked": false },
+      { "name": "Raja Ampat", "checked": false },
+      { "name": "Sorong", "checked": false },
+      { "name": "Sorong Selatan", "checked": false },
+      { "name": "Tambrauw", "checked": false }
     ]
   }
 ]
