@@ -8,14 +8,14 @@ const route = useRoute();
 const provinsiList = ref(provinsiListData);
 const provinces = ref(provincesData);
 const entriesCount = ref(10);
-const openDropdown = ref(null); // Track which dropdown is open
+const openDropdown = ref(null); 
 
 const filteredProvinsiList = computed(() => {
   return provinsiList.value.slice(0, entriesCount.value);
 });
 
 const toggleDropdown = (prov) => {
-  // Close the currently open dropdown if it's not the same one
+
   if (openDropdown.value && openDropdown.value !== prov) {
     openDropdown.value.showDropdown = false;
   }
