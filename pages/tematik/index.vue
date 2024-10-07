@@ -3,17 +3,28 @@ import { ref, computed } from "vue";
 import temaListData from "../../utils/TematikList.json";
 
 const temaList = ref(temaListData);
-
 const selectedRows = ref([]);
+const selectedYear = ref("2024");
+const years = [2025, 2024, 2023, 2022, 2021, 2020];
 
-const isAllSelected = computed(() => selectedRows.value.length === temaList.value.length && selectedRows.value.length > 0);
+const isAllSelected = computed(() => selectedRows.value.length === filteredTemaList.value.length && selectedRows.value.length > 0);
 
 const toggleAll = () => {
   if (isAllSelected.value) {
     selectedRows.value = [];
   } else {
-    selectedRows.value = temaList.value.map((item) => item.id);
+    selectedRows.value = filteredTemaList.value.map((item) => item.id);
   }
+};
+
+
+const filteredTemaList = computed(() => {
+  return selectedYear.value === "2025" ? [] : temaList.value;
+});
+
+const updateYear = () => {
+  console.log("Year updated to:", selectedYear.value);
+  selectedRows.value = []; 
 };
 </script>
 
@@ -29,7 +40,9 @@ const toggleAll = () => {
       </h1>
     </div>
     <div class="">
-      <SelectYear />
+      <select v-model="selectedYear" @change="updateYear" name="tahun" id="tahun" class="bg-[#f20a34] rounded-full py-2 px-8 text-white font-semibold">
+        <option v-for="year in years" :key="year" :value="year" class="bg-white text-black">Tahun {{ year }}</option>
+      </select>
     </div>
   </div>
 
@@ -37,7 +50,7 @@ const toggleAll = () => {
     <div class="w-full bg-white px-7 rounded-lg text-black py-8">
       <EntriesValue />
       <div class="w-full mt-10 overflow-x-auto">
-        <table class="w-full">
+        <table class="w-full" v-if="filteredTemaList.length > 0">
           <thead>
             <tr>
               <th class="px-4">
@@ -54,7 +67,7 @@ const toggleAll = () => {
             </tr>
           </thead>
           <tbody>
-            <tr class="border-t-[1px]" v-for="(tema, index) in temaList" :key="tema.id">
+            <tr class="border-t-[1px]" v-for="(tema, index) in filteredTemaList" :key="tema.id">
               <td class="py-3 px-5 text-center">
                 <input type="checkbox" :value="tema.id" v-model="selectedRows" />
               </td>
@@ -80,6 +93,7 @@ const toggleAll = () => {
             </tr>
           </tbody>
         </table>
+        <div v-else class="text-center text-gray-500 py-5">No data available for the selected year.</div>
 
         <div class="flex justify-between mt-10 items-center">
           <h1 class="text-md font-medium">Data Update : 20 Juli 2024</h1>
