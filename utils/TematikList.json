@@ -1,0 +1,8 @@
+[
+  { "id": 1, "name": "SDGS", "tema": "SDGS", "national": "1.400.000.000,00", "provincial": "1.250.000.000,00", "district": "550.000.000,00" },
+  { "id": 2, "name": "SERTIFIKASI", "tema": "SERTIFIKASI", "national": "100.000.000,00", "provincial": "1.350.000.000,00", "district": "430.000.000,00" },
+  { "id": 3, "name": "BENCANA", "tema": "BENCANA", "national": "1.500.000.000,00", "provincial": "1.800.000.000,00", "district": "600.000.000,00" },
+  { "id": 4, "name": "SIGA", "tema": "SIGA", "national": "900.000.000,00", "provincial": "1.100.000.000,00", "district": "450.000.000,00" },
+  { "id": 5, "name": "SERTIFIKASI", "tema": "SERTIFIKASI", "national": "700.000.000,00", "provincial": "900.000.000,00", "district": "350.000.000,00" },
+  { "id": 6, "name": "SISTEM MANAGEMENT", "tema": "SISTEM MANAGEMENT", "national": "1.200.000.000,00", "provincial": "1.400.000.000,00", "district": "550.000.000,00" }
+]
