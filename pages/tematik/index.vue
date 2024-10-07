@@ -1,6 +1,6 @@
 <script setup>
 import { ref, computed } from "vue";
-import { useRouter } from "vue-router"; 
+import { useRouter } from "vue-router";
 import temaListData from "../../utils/TematikList.json";
 
 const temaList = ref(temaListData);
@@ -27,12 +27,12 @@ const updateYear = () => {
   selectedRows.value = [];
 };
 
-
 const router = useRouter();
+
 const applySelection = () => {
   if (selectedRows.value.length > 0) {
-
-    router.push({ name: "SelectedTemas", params: { selectedIds: selectedRows.value } }); 
+    // Redirect to the new page with the selected IDs
+    router.push({ name: "SelectedTemas", query: { selectedIds: selectedRows.value.join(",") } });
   } else {
     alert("Please select at least one item to apply.");
   }
