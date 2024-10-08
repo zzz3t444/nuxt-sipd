@@ -1,9 +1,8 @@
 <script lang="ts" setup>
 import { useAttrs, ref, computed, onMounted, watch } from "vue";
 
-
 interface Attrs {
-  render?: Record<string, string[]>; 
+  render?: Record<string, string[]>;
   selectname?: string;
   selectid?: string;
 }
@@ -14,35 +13,34 @@ const selected = ref<string[]>([]);
 const isActive = ref(false);
 const searchQuery = ref("");
 
-
 const filteredCategories = computed(() => {
   const result: Record<string, string[]> = {};
-  const render = attr.render || {}; 
+  const render = attr.render || {};
   for (const [category, items] of Object.entries(render)) {
-    const filteredItems = items.filter((item: string) => item.toLowerCase().includes(searchQuery.value.toLowerCase()));
-    if (filteredItems.length > 0) {
-      result[category] = filteredItems;
+    if (Array.isArray(items)) {
+      const filteredItems = items.filter((item: string) => item.toLowerCase().includes(searchQuery.value.toLowerCase()));
+      if (filteredItems.length > 0) {
+        result[category] = filteredItems;
+      }
+    } else {
+      console.warn(`Expected items to be an array for category: ${category}`, items);
     }
   }
   return result;
 });
-
 
 const isAllSelected = computed(() => {
   const allItems = Object.values(filteredCategories.value).flat();
   return allItems.length > 0 && allItems.every((item) => selected.value.includes(item));
 });
 
-
 const toggleDropdown = () => {
   isActive.value = !isActive.value;
 };
 
-
 const filterItems = (event: Event) => {
   searchQuery.value = (event.target as HTMLInputElement).value;
 };
-
 
 const toggleSelectItem = (item: string) => {
   if (selected.value.includes(item)) {
@@ -51,7 +49,6 @@ const toggleSelectItem = (item: string) => {
     selected.value.push(item);
   }
 };
-
 
 const toggleSelectAll = () => {
   const allItems = Object.values(filteredCategories.value).flat();
@@ -65,7 +62,6 @@ const toggleSelectAll = () => {
     });
   }
 };
-
 
 onMounted(() => {
   const handleClickOutside = (event: MouseEvent) => {
@@ -91,7 +87,7 @@ onMounted(() => {
     </select>
     <div class="w-full relative">
       <span class="button w-[100%] text-black bg-[#f2f7f8] rounded-md flex justify-between items-center px-8 py-4 cursor-pointer" @click="toggleDropdown">
-        <div>{{ selected.length > 1 ? `${selected.length} dipilih` : selected.length === 1 ? selected[0] : "Pilih item" }}</div>
+        <div>{{ selected.length > 1 ? `${selected.length} dipilih` : selected.length === 1 ? selected[0] : "- Belum Memilih - " }}</div>
         <i class="fa-solid fa-chevron-down"></i>
       </span>
       <div v-show="isActive" class="w-full bg-white shadow-xl rounded-lg text-black absolute left-0 top-[100%] z-50 select">

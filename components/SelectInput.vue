@@ -14,7 +14,9 @@ const searchQuery = ref("");
 
 const filteredItems = computed(() => {
   if (Array.isArray(attr.render)) {
-    return attr.render.filter((item: string) => item.toLowerCase().includes(searchQuery.value.toLowerCase()));
+    return attr.render.filter((item) => {
+      return typeof item === "string" && item.toLowerCase().includes(searchQuery.value.toLowerCase());
+    });
   }
   return [];
 });
@@ -54,7 +56,7 @@ onMounted(() => {
     </select>
     <div class="w-full relative">
       <span class="button w-[100%] text-black bg-[#f2f7f8] rounded-md flex justify-between items-center px-8 py-4 cursor-pointer" @click="toggleDropdown">
-        <div>{{ selected ? selected : "Pilih item" }}</div>
+        <div>{{ selected ? selected : "- Belum Memilih -" }}</div>
         <i class="fa-solid fa-chevron-down"></i>
       </span>
       <div v-show="isActive" class="w-full bg-white shadow-xl rounded-lg text-black absolute left-0 top-[100%] z-20 select">

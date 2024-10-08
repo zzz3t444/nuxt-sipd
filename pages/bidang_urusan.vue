@@ -1,12 +1,10 @@
 <script setup>
-const temaList = ["Air minum", "Perhutanan Sosial", "Stunting", "Infrastruktur", "Sumberdana DAK (Sekretariat)"];
+import subKegiatanData from "../utils/SubKegiatan.json";
+import provinceNameListData from "../utils/provinceListName.json";
+import bidangUrusanData from "../utils/bidangUrusan.json";
 
-const subKegiatan = {
-  provinsi: ["kegiatan provinsi 1", "kegiatan provinsi 2", "kegiatan provinsi 3", "kegiatan provinsi 4", "kegiatan provinsi 5"],
-  "kab/kota": ["kegiatan kab/kota 1", "kegiatan kab/kota 2", "kegiatan kab/kota 3", "kegiatan kab/kota 4", "kegiatan kab/kota 5"],
-};
-
-const lingkup = ["nasional", "provinsi", "kab/kota"];
+const subKegiatan = subKegiatanData;
+const province = provinceNameListData;
 </script>
 
 <template>
@@ -30,29 +28,24 @@ const lingkup = ["nasional", "provinsi", "kab/kota"];
       <!-- First Row -->
       <div class="flex flex-col md:flex-row items-center gap-5">
         <div class="flex flex-col gap-2 w-full md:w-[50%]">
-          <label for="tema" class="text-black">Pilih Tema</label>
-          <SelectInput :render="temaList" class="w-full" selectname="tema" selectid="tema" />
+          <label for="tema" class="text-black">Bidang Urusan</label>
+          <SelectInput :render="bidangUrusanData" class="w-full" selectname="Bidang Urusan" selectid="Bidang Urusan" />
         </div>
         <div class="flex flex-col gap-2 w-full md:w-[50%]">
-          <label for="subkegiatan" class="text-black">Pilih Sub kegiatan</label>
+          <label for="subkegiatan" class="text-black">Pilih Program</label>
           <MultipleSelectInput :render="subKegiatan" class="w-full" selectname="subkegiatan" selectid="subkegiatan" />
         </div>
       </div>
-
-      <!-- <div class="flex flex-col gap-2">
-        <label for="lingkup" class="text-black">Lingkup</label>
-        <SelectInput :render="lingkup" class="w-full" selectname="lingkup" selectid="lingkup" />
-      </div> -->
 
       <!-- Third Row -->
       <div class="flex flex-col md:flex-row items-center gap-5">
         <div class="flex flex-col gap-2 w-full md:w-[50%]">
           <label for="provinsi" class="text-black">Provinsi</label>
-          <SelectInput :render="temaList" class="w-full" selectname="provinsi" selectid="provinsi" />
+          <SelectInput :render="province" class="w-full" selectname="provinsi" selectid="provinsi" />
         </div>
         <div class="flex flex-col gap-2 w-full md:w-[50%]">
           <label for="kota" class="text-black">Kab / Kota</label>
-          <SelectInput :render="temaList" class="w-full" selectname="kota" selectid="kota" />
+          <SelectInput :render="bidangUrusan" class="w-full" selectname="kota" selectid="kota" />
         </div>
       </div>
 
