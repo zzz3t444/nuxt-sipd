@@ -629,12 +629,46 @@ onMounted(() => {
         <SelectYear />
       </div>
     </div>
+    
+
+    <div class="w-full bg-white mt-6 rounded-3xl">
+      <div class="w-full h-16 bg-[#ff9000] rounded-tr-2xl rounded-tl-2xl rounded- text-white p-5 text-xl">
+        <h1>Informasi Daerah</h1>
+      </div>
+      <div class="flex flex-row p-10 items-center">
+        <img class="w-60 h-60 mr-10" src="@/assets/images/aceh.png" alt="logo" />
+        <div class="flex flex-col w-full">
+          <div class="border-b-2 pb-5">
+            <h1 class="text-2xl font-medium">
+              {{ typeof $route.params.province === "string" ? $route.params.province.toUpperCase() : "" }}
+            </h1>
+            <h1>PERIODE RPJMD (2018 - 2023) - "Terwujudnya Aceh Selatan yang Bekeadilan Secara Sosial dan Ekonomi"</h1>
+          </div>
+          <div class="flex flex-col gap-2 pt-5">
+            <div class="flex flex-row border-2">
+              <div class="p-3">Nama Kepala Daerah</div>
+              <div class="border-x p-3">:</div>
+              <div class="flex flex-1 p-3"></div>
+            </div>
+            <h1 class="text-lg font-semibold">Tahapan</h1>
+            <h1>-</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-lg w-full py-3 px-5 mt-10 bg-[#ccecfe] text-[#5E5E5E] border border-[#b8e4fe] rounded-md">
+      <div class="">
+        Posisi Per-Provinsi Tahun:
+        <b class="text-black">{{ data.singkat.tahun }}</b>
+      </div>
+    </div>
 
     <div v-if="$route.params.district === 'rekap'">
-      <h1>Rekap untuk {{ $route.params.province }}</h1>
+      <!-- <h1>Rekap untuk {{ $route.params.province }}</h1> -->
       <div class="flex flex-col gap-5 py-5">
         <div class="flex gap-3 flex-col lg:flex-row">
-          <div class="bg-[#f9fafb] px-4 sm:px-9 py-3 sm:py-5 lg:p-8 rounded-xl flex flex-col gap-3 text-white w-full">
+          <div class="bg-[#f9fafb] px-4 sm:px-9 py-3 sm:py-5 lg:p-8 rounded-3xl flex flex-col gap-3 text-white w-full">
             <h1 class="text-xl text-black font-semibold mb-2">RKPD</h1>
             <div class="w-full grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-5 lg:gap-6 mb-8">
               <StatusCard v-for="(card, key) in rkpdCards" :key="key" :color="card.color" :value="data.singkat[key]" :label="card.label" @card-click="openModal(key)" />

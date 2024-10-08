@@ -11,6 +11,7 @@
       <SelectYear />
     </div>
   </div>
+
   <div class="w-full bg-white mt-6 rounded-3xl">
     <div class="w-full h-16 bg-[#ff9000] rounded-tr-2xl rounded-tl-2xl rounded- text-white p-5 text-xl">
       <h1>Informasi Daerah</h1>
@@ -36,5 +37,6 @@
       </div>
     </div>
   </div>
+  
   <TablePagu />
 </template>
