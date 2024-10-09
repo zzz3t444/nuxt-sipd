@@ -289,8 +289,8 @@ const data = ref({
     penetapan: [],
   },
   chart: {
-    label: ["Belum Input", "Persiapan", "Ranwal", "Rancangan", "Musrenbang", "Rancangan Akhir", "Penetapan"],
-    value: [23, 0, 0, 0, 0, 0, 0],
+    label: ["Belum Input", "Persiapan", "Rancangan Awal", "Rancangan", "Musrenbang", "Rancangan Akhir", "Penetapan"],
+    value: [33, 10, 5, 3, 2, 6, 1],
   },
   data: [
     {
@@ -550,13 +550,13 @@ const data = ref({
 });
 
 const rkpdCards = {
-  beluminput: { color: "#67B8FF", label: "Belum Input" },
-  persiapan: { color: "#1391FF", label: "Persiapan" },
-  rancangan: { color: "#1391FF", label: "Rancangan awal" },
-  ranwal: { color: "#0070D2", label: "Rancangan" },
-  musrenbang: { color: "#005EB0", label: "Musrenbang" },
-  rancanganakhir: { color: "#004179", label: "Rancangan Akhir" },
-  penetapan: { color: "#002444", label: "Penetapan" },
+  beluminput: { color: "#ff2f55", label: "Belum Input" },
+  persiapan: { color: "#f54eb9", label: "Persiapan" },
+  rancangan: { color: "#39c449", label: "Rancangan Awal" },
+  ranwal: { color: "#263238", label: "Rancangan" },
+  musrenbang: { color: "#ffbc34", label: "Musrenbang" },
+  rancanganakhir: { color: "#7460ee", label: "Rancangan Akhir" },
+  penetapan: { color: "#009efb", label: "Penetapan" },
 };
 
 const showModal = ref(false);
@@ -591,8 +591,8 @@ onMounted(() => {
         {
           label: "Chart Rekap Tahapan Per-Provinsi " + data.value.singkat.tahun,
           data: data.value.chart.value,
-          backgroundColor: ["#67B8FF", "#1391FF", "#0070D2", "#005EB0", "#004179", "#002444", "#4A47FF", "#0300D0", "#00D0E8", "#0097A8"],
-          hoverOffset: 4,
+          backgroundColor: ["#ef4444", "#22c55e", "#1f2937", "#eab308", "#9333ea", "#3b82f6", "#c084fc"],
+          hoverOffset: 10,
         },
       ],
     };
@@ -629,14 +629,13 @@ onMounted(() => {
         <SelectYear />
       </div>
     </div>
-    
 
     <div class="w-full bg-white mt-6 rounded-3xl">
       <div class="w-full h-16 bg-[#ff9000] rounded-tr-2xl rounded-tl-2xl rounded- text-white p-5 text-xl">
         <h1>Informasi Daerah</h1>
       </div>
       <div class="flex flex-row p-10 items-center">
-        <img class="w-60 h-60 mr-10" src="@/assets/images/aceh.png" alt="logo" />
+        <img class="w-52 h-52 mr-10" src="@/assets/images/aceh.png" alt="logo" />
         <div class="flex flex-col w-full">
           <div class="border-b-2 pb-5">
             <h1 class="text-2xl font-medium">
@@ -668,17 +667,20 @@ onMounted(() => {
       <!-- <h1>Rekap untuk {{ $route.params.province }}</h1> -->
       <div class="flex flex-col gap-5 py-5">
         <div class="flex gap-3 flex-col lg:flex-row">
-          <div class="bg-[#f9fafb] px-4 sm:px-9 py-3 sm:py-5 lg:p-8 rounded-3xl flex flex-col gap-3 text-white w-full">
+          <div class="bg-white px-4 sm:px-9 py-3 sm:py-5 lg:p-8 rounded-3xl flex flex-col gap-3 text-white w-full">
             <h1 class="text-xl text-black font-semibold mb-2">RKPD</h1>
-            <div class="w-full grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-5 lg:gap-6 mb-8">
+            <div class="w-full grid sm:grid-cols-4 gap-2 grid-cols-4 sm:gap-3 lg:gap-3 mb-8">
               <StatusCard v-for="(card, key) in rkpdCards" :key="key" :color="card.color" :value="data.singkat[key]" :label="card.label" @card-click="openModal(key)" />
             </div>
           </div>
         </div>
-        <div class="flex w-full h-full justify-center bg-[#272B34] rounded p-4 sm:px-20 py-12 max-h-[700px]">
-          <canvas id="myChart" class="block"></canvas>
+
+        <!-- Bottom Row with 3 Grids -->
+        <div class="flex w-full justify-center bg-white rounded-3xl p-4 sm:px-20 py-12">
+          <div class="w-[800px] grid sm:grid-cols-3 gap-5">
+            <canvas id="myChart" class="col-span-3" width="600" height="400"></canvas>
+          </div>
         </div>
-        <div></div>
       </div>
 
       <!-- Modal -->
@@ -735,31 +737,6 @@ onMounted(() => {
     </div>
 
     <div v-else>
-      <div class="w-full bg-white mt-6 rounded">
-        <div class="w-full h-16 bg-[#FFBC34] rounded-t text-white p-5 text-xl">
-          <h1>Informasi Daerah</h1>
-        </div>
-        <div class="flex flex-row p-10 items-center">
-          <img class="w-28 h-28 mr-10" src="@/assets/images/aceh.png" alt="logo" />
-          <div class="flex flex-col w-full">
-            <div class="border-b-2 pb-5">
-              <h1 class="text-2xl font-medium">
-                {{ $route.params.district.toUpperCase() }}
-              </h1>
-              <h1>PERIODE RPJMD (2018 - 2023) - "Terwujudnya Aceh Selatan yang Bekeadilan Secara Sosial dan Ekonomi"</h1>
-            </div>
-            <div class="flex flex-col gap-2 pt-5">
-              <div class="flex flex-row border-2">
-                <div class="p-3">Nama Kepala Daerah</div>
-                <div class="border-x p-3">:</div>
-                <div class="flex flex-1 p-3"></div>
-              </div>
-              <h1 class="text-lg font-semibold">Tahapan</h1>
-              <h1>-</h1>
-            </div>
-          </div>
-        </div>
-      </div>
       <TablePagu />
     </div>
   </div>

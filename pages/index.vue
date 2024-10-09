@@ -366,7 +366,7 @@ onMounted(() => {
   <!-- Modal -->
   <div v-show="showModal" class="fixed top-0 inset-0 bg-black bg-opacity-70 flex items-center justify-center z-[500] py-[10px] overflow-auto">
     <transition name="modal-drop">
-      <div v-show="showModal" class="bg-white rounded sm:w-full md:w-3/4 overflow-auto">
+      <div v-show="showModal" class="bg-white rounded-2xl sm:w-full md:w-3/4 overflow-auto">
         <h2 class="text-lg bg-[#009efb] p-4 text-white">Detail: {{ selectedCard }}</h2>
         <div class="p-4">
           <div class="mb-4">
