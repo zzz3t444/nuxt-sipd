@@ -18,13 +18,14 @@ defineEmits(["cardClick"]);
 </script>
 
 <template>
-  <div class="card-hover" @click="$emit('cardClick', label)">
+  <div class="w-full flex justify-center">
     <div
-      class="border h-32 p-2 pl-5 rounded-2xl flex justify-between bg-white cursor-pointer text-white"
+      class="border h-36  p-2 pl-5 rounded-2xl flex justify-between bg-white cursor-pointer text-white w-full"
       :style="{
         borderColor: color,
         background: color,
-      }">
+      }"
+      @click="$emit('cardClick', label)">
       <div class="flex flex-col justify-center gap-1">
         <h1 class="text-2xl lg:text-5xl font-medium">{{ value }}</h1>
         <h1 class="font-medium">{{ label }}</h1>
@@ -39,3 +40,13 @@ defineEmits(["cardClick"]);
     </div>
   </div>
 </template>
+
+<style scoped>
+.card-hover {
+  transition: transform 0.2s;
+}
+
+.card-hover:hover {
+  transform: scale(1.05);
+}
+</style>
