@@ -2,6 +2,7 @@
 import { onMounted, ref, computed } from "vue";
 import { Chart } from "chart.js/auto";
 import StatusCard from "../components/StatusCard.vue";
+import DistricData from "../../../utils/district.json";
 
 const searchTerm = ref("");
 
@@ -13,550 +14,16 @@ const filteredData = computed(() => {
   );
 });
 
-const data = ref({
-  singkat: {
-    tahun: "2025",
-    beluminput: 23,
-    persiapan: 0,
-    rancangan: 0,
-    ranwal: 0,
-    musrenbang: 0,
-    rancanganakhir: 0,
-    totalprov: 23,
-    penetapan: 0,
-  },
-  detail: {
-    beluminput: [
-      {
-        tahun: "2025",
-        provno: "11",
-        kabkotno: "01",
-        kodepemda: "1101",
-        namapemda: "KAB. ACEH SELATAN",
-        waktu_mulai: "",
-        waktu_selesai: "",
-        nama_sub_tahap: "-",
-        berlangsung: 0,
-      },
-      {
-        tahun: "2025",
-        provno: "11",
-        kabkotno: "02",
-        kodepemda: "1102",
-        namapemda: "KAB. ACEH TENGGARA",
-        waktu_mulai: "",
-        waktu_selesai: "",
-        nama_sub_tahap: "-",
-        berlangsung: 0,
-      },
-      {
-        tahun: "2025",
-        provno: "11",
-        kabkotno: "03",
-        kodepemda: "1103",
-        namapemda: "KAB. ACEH TIMUR",
-        waktu_mulai: "",
-        waktu_selesai: "",
-        nama_sub_tahap: "-",
-        berlangsung: 0,
-      },
-      {
-        tahun: "2025",
-        provno: "11",
-        kabkotno: "04",
-        kodepemda: "1104",
-        namapemda: "KAB. ACEH TENGAH",
-        waktu_mulai: "",
-        waktu_selesai: "",
-        nama_sub_tahap: "-",
-        berlangsung: 0,
-      },
-      {
-        tahun: "2025",
-        provno: "11",
-        kabkotno: "05",
-        kodepemda: "1105",
-        namapemda: "KAB. ACEH BARAT",
-        waktu_mulai: "",
-        waktu_selesai: "",
-        nama_sub_tahap: "-",
-        berlangsung: 0,
-      },
-      {
-        tahun: "2025",
-        provno: "11",
-        kabkotno: "06",
-        kodepemda: "1106",
-        namapemda: "KAB. ACEH BESAR",
-        waktu_mulai: "",
-        waktu_selesai: "",
-        nama_sub_tahap: "-",
-        berlangsung: 0,
-      },
-      {
-        tahun: "2025",
-        provno: "11",
-        kabkotno: "07",
-        kodepemda: "1107",
-        namapemda: "KAB. PIDIE",
-        waktu_mulai: "",
-        waktu_selesai: "",
-        nama_sub_tahap: "-",
-        berlangsung: 0,
-      },
-      {
-        tahun: "2025",
-        provno: "11",
-        kabkotno: "08",
-        kodepemda: "1108",
-        namapemda: "KAB. ACEH UTARA",
-        waktu_mulai: "",
-        waktu_selesai: "",
-        nama_sub_tahap: "-",
-        berlangsung: 0,
-      },
-      {
-        tahun: "2025",
-        provno: "11",
-        kabkotno: "09",
-        kodepemda: "1109",
-        namapemda: "KAB. SIMEULUE",
-        waktu_mulai: "",
-        waktu_selesai: "",
-        nama_sub_tahap: "-",
-        berlangsung: 0,
-      },
-      {
-        tahun: "2025",
-        provno: "11",
-        kabkotno: "10",
-        kodepemda: "1110",
-        namapemda: "KAB. ACEH SINGKIL",
-        waktu_mulai: "",
-        waktu_selesai: "",
-        nama_sub_tahap: "-",
-        berlangsung: 0,
-      },
-      {
-        tahun: "2025",
-        provno: "11",
-        kabkotno: "11",
-        kodepemda: "1111",
-        namapemda: "KAB. BIREUEN",
-        waktu_mulai: "",
-        waktu_selesai: "",
-        nama_sub_tahap: "-",
-        berlangsung: 0,
-      },
-      {
-        tahun: "2025",
-        provno: "11",
-        kabkotno: "12",
-        kodepemda: "1112",
-        namapemda: "KAB. ACEH BARAT DAYA",
-        waktu_mulai: "",
-        waktu_selesai: "",
-        nama_sub_tahap: "-",
-        berlangsung: 0,
-      },
-      {
-        tahun: "2025",
-        provno: "11",
-        kabkotno: "13",
-        kodepemda: "1113",
-        namapemda: "KAB. GAYO LUES",
-        waktu_mulai: "",
-        waktu_selesai: "",
-        nama_sub_tahap: "-",
-        berlangsung: 0,
-      },
-      {
-        tahun: "2025",
-        provno: "11",
-        kabkotno: "14",
-        kodepemda: "1114",
-        namapemda: "KAB. ACEH JAYA",
-        waktu_mulai: "",
-        waktu_selesai: "",
-        nama_sub_tahap: "-",
-        berlangsung: 0,
-      },
-      {
-        tahun: "2025",
-        provno: "11",
-        kabkotno: "15",
-        kodepemda: "1115",
-        namapemda: "KAB. NAGAN RAYA",
-        waktu_mulai: "",
-        waktu_selesai: "",
-        nama_sub_tahap: "-",
-        berlangsung: 0,
-      },
-      {
-        tahun: "2025",
-        provno: "11",
-        kabkotno: "16",
-        kodepemda: "1116",
-        namapemda: "KAB. ACEH TAMIANG",
-        waktu_mulai: "",
-        waktu_selesai: "",
-        nama_sub_tahap: "-",
-        berlangsung: 0,
-      },
-      {
-        tahun: "2025",
-        provno: "11",
-        kabkotno: "17",
-        kodepemda: "1117",
-        namapemda: "KAB. BENER MERIAH",
-        waktu_mulai: "",
-        waktu_selesai: "",
-        nama_sub_tahap: "-",
-        berlangsung: 0,
-      },
-      {
-        tahun: "2025",
-        provno: "11",
-        kabkotno: "18",
-        kodepemda: "1118",
-        namapemda: "KAB. PIDIE JAYA",
-        waktu_mulai: "",
-        waktu_selesai: "",
-        nama_sub_tahap: "-",
-        berlangsung: 0,
-      },
-      {
-        tahun: "2025",
-        provno: "11",
-        kabkotno: "71",
-        kodepemda: "1171",
-        namapemda: "KOTA BANDA ACEH",
-        waktu_mulai: "",
-        waktu_selesai: "",
-        nama_sub_tahap: "-",
-        berlangsung: 0,
-      },
-      {
-        tahun: "2025",
-        provno: "11",
-        kabkotno: "72",
-        kodepemda: "1172",
-        namapemda: "KOTA SABANG",
-        waktu_mulai: "",
-        waktu_selesai: "",
-        nama_sub_tahap: "-",
-        berlangsung: 0,
-      },
-      {
-        tahun: "2025",
-        provno: "11",
-        kabkotno: "73",
-        kodepemda: "1173",
-        namapemda: "KOTA LHOKSEUMAWE",
-        waktu_mulai: "",
-        waktu_selesai: "",
-        nama_sub_tahap: "-",
-        berlangsung: 0,
-      },
-      {
-        tahun: "2025",
-        provno: "11",
-        kabkotno: "74",
-        kodepemda: "1174",
-        namapemda: "KOTA LANGSA",
-        waktu_mulai: "",
-        waktu_selesai: "",
-        nama_sub_tahap: "-",
-        berlangsung: 0,
-      },
-      {
-        tahun: "2025",
-        provno: "11",
-        kabkotno: "75",
-        kodepemda: "1175",
-        namapemda: "KOTA SUBULUSSALAM",
-        waktu_mulai: "",
-        waktu_selesai: "",
-        nama_sub_tahap: "-",
-        berlangsung: 0,
-      },
-    ],
-    persiapan: [],
-    rancangan: [],
-    ranwal: [],
-    musrenbang: [],
-    rancanganakhir: [],
-    penetapan: [],
-  },
-  chart: {
-    label: ["Belum Input", "Persiapan", "Ranwal", "Rancangan", "Musrenbang", "Rancangan Akhir", "Penetapan"],
-    value: [23, 0, 0, 0, 0, 0, 0],
-  },
-  data: [
-    {
-      tahun: "2025",
-      provno: "11",
-      kabkotno: "01",
-      kodepemda: "1101",
-      namapemda: "KAB. ACEH SELATAN",
-      waktu_mulai: "",
-      waktu_selesai: "",
-      nama_sub_tahap: "-",
-      berlangsung: 0,
-    },
-    {
-      tahun: "2025",
-      provno: "11",
-      kabkotno: "02",
-      kodepemda: "1102",
-      namapemda: "KAB. ACEH TENGGARA",
-      waktu_mulai: "",
-      waktu_selesai: "",
-      nama_sub_tahap: "-",
-      berlangsung: 0,
-    },
-    {
-      tahun: "2025",
-      provno: "11",
-      kabkotno: "03",
-      kodepemda: "1103",
-      namapemda: "KAB. ACEH TIMUR",
-      waktu_mulai: "",
-      waktu_selesai: "",
-      nama_sub_tahap: "-",
-      berlangsung: 0,
-    },
-    {
-      tahun: "2025",
-      provno: "11",
-      kabkotno: "04",
-      kodepemda: "1104",
-      namapemda: "KAB. ACEH TENGAH",
-      waktu_mulai: "",
-      waktu_selesai: "",
-      nama_sub_tahap: "-",
-      berlangsung: 0,
-    },
-    {
-      tahun: "2025",
-      provno: "11",
-      kabkotno: "05",
-      kodepemda: "1105",
-      namapemda: "KAB. ACEH BARAT",
-      waktu_mulai: "",
-      waktu_selesai: "",
-      nama_sub_tahap: "-",
-      berlangsung: 0,
-    },
-    {
-      tahun: "2025",
-      provno: "11",
-      kabkotno: "06",
-      kodepemda: "1106",
-      namapemda: "KAB. ACEH BESAR",
-      waktu_mulai: "",
-      waktu_selesai: "",
-      nama_sub_tahap: "-",
-      berlangsung: 0,
-    },
-    {
-      tahun: "2025",
-      provno: "11",
-      kabkotno: "07",
-      kodepemda: "1107",
-      namapemda: "KAB. PIDIE",
-      waktu_mulai: "",
-      waktu_selesai: "",
-      nama_sub_tahap: "-",
-      berlangsung: 0,
-    },
-    {
-      tahun: "2025",
-      provno: "11",
-      kabkotno: "08",
-      kodepemda: "1108",
-      namapemda: "KAB. ACEH UTARA",
-      waktu_mulai: "",
-      waktu_selesai: "",
-      nama_sub_tahap: "-",
-      berlangsung: 0,
-    },
-    {
-      tahun: "2025",
-      provno: "11",
-      kabkotno: "09",
-      kodepemda: "1109",
-      namapemda: "KAB. SIMEULUE",
-      waktu_mulai: "",
-      waktu_selesai: "",
-      nama_sub_tahap: "-",
-      berlangsung: 0,
-    },
-    {
-      tahun: "2025",
-      provno: "11",
-      kabkotno: "10",
-      kodepemda: "1110",
-      namapemda: "KAB. ACEH SINGKIL",
-      waktu_mulai: "",
-      waktu_selesai: "",
-      nama_sub_tahap: "-",
-      berlangsung: 0,
-    },
-    {
-      tahun: "2025",
-      provno: "11",
-      kabkotno: "11",
-      kodepemda: "1111",
-      namapemda: "KAB. BIREUEN",
-      waktu_mulai: "",
-      waktu_selesai: "",
-      nama_sub_tahap: "-",
-      berlangsung: 0,
-    },
-    {
-      tahun: "2025",
-      provno: "11",
-      kabkotno: "12",
-      kodepemda: "1112",
-      namapemda: "KAB. ACEH BARAT DAYA",
-      waktu_mulai: "",
-      waktu_selesai: "",
-      nama_sub_tahap: "-",
-      berlangsung: 0,
-    },
-    {
-      tahun: "2025",
-      provno: "11",
-      kabkotno: "13",
-      kodepemda: "1113",
-      namapemda: "KAB. GAYO LUES",
-      waktu_mulai: "",
-      waktu_selesai: "",
-      nama_sub_tahap: "-",
-      berlangsung: 0,
-    },
-    {
-      tahun: "2025",
-      provno: "11",
-      kabkotno: "14",
-      kodepemda: "1114",
-      namapemda: "KAB. ACEH JAYA",
-      waktu_mulai: "",
-      waktu_selesai: "",
-      nama_sub_tahap: "-",
-      berlangsung: 0,
-    },
-    {
-      tahun: "2025",
-      provno: "11",
-      kabkotno: "15",
-      kodepemda: "1115",
-      namapemda: "KAB. NAGAN RAYA",
-      waktu_mulai: "",
-      waktu_selesai: "",
-      nama_sub_tahap: "-",
-      berlangsung: 0,
-    },
-    {
-      tahun: "2025",
-      provno: "11",
-      kabkotno: "16",
-      kodepemda: "1116",
-      namapemda: "KAB. ACEH TAMIANG",
-      waktu_mulai: "",
-      waktu_selesai: "",
-      nama_sub_tahap: "-",
-      berlangsung: 0,
-    },
-    {
-      tahun: "2025",
-      provno: "11",
-      kabkotno: "17",
-      kodepemda: "1117",
-      namapemda: "KAB. BENER MERIAH",
-      waktu_mulai: "",
-      waktu_selesai: "",
-      nama_sub_tahap: "-",
-      berlangsung: 0,
-    },
-    {
-      tahun: "2025",
-      provno: "11",
-      kabkotno: "18",
-      kodepemda: "1118",
-      namapemda: "KAB. PIDIE JAYA",
-      waktu_mulai: "",
-      waktu_selesai: "",
-      nama_sub_tahap: "-",
-      berlangsung: 0,
-    },
-    {
-      tahun: "2025",
-      provno: "11",
-      kabkotno: "71",
-      kodepemda: "1171",
-      namapemda: "KOTA BANDA ACEH",
-      waktu_mulai: "",
-      waktu_selesai: "",
-      nama_sub_tahap: "-",
-      berlangsung: 0,
-    },
-    {
-      tahun: "2025",
-      provno: "11",
-      kabkotno: "72",
-      kodepemda: "1172",
-      namapemda: "KOTA SABANG",
-      waktu_mulai: "",
-      waktu_selesai: "",
-      nama_sub_tahap: "-",
-      berlangsung: 0,
-    },
-    {
-      tahun: "2025",
-      provno: "11",
-      kabkotno: "73",
-      kodepemda: "1173",
-      namapemda: "KOTA LHOKSEUMAWE",
-      waktu_mulai: "",
-      waktu_selesai: "",
-      nama_sub_tahap: "-",
-      berlangsung: 0,
-    },
-    {
-      tahun: "2025",
-      provno: "11",
-      kabkotno: "74",
-      kodepemda: "1174",
-      namapemda: "KOTA LANGSA",
-      waktu_mulai: "",
-      waktu_selesai: "",
-      nama_sub_tahap: "-",
-      berlangsung: 0,
-    },
-    {
-      tahun: "2025",
-      provno: "11",
-      kabkotno: "75",
-      kodepemda: "1175",
-      namapemda: "KOTA SUBULUSSALAM",
-      waktu_mulai: "",
-      waktu_selesai: "",
-      nama_sub_tahap: "-",
-      berlangsung: 0,
-    },
-  ],
-});
+const data = ref(DistricData);
 
 const rkpdCards = {
-  beluminput: { color: "#67B8FF", label: "Belum Input" },
-  persiapan: { color: "#1391FF", label: "Persiapan" },
-  rancangan: { color: "#1391FF", label: "Rancangan awal" },
-  ranwal: { color: "#0070D2", label: "Rancangan" },
-  musrenbang: { color: "#005EB0", label: "Musrenbang" },
-  rancanganakhir: { color: "#004179", label: "Rancangan Akhir" },
-  penetapan: { color: "#002444", label: "Penetapan" },
+  beluminput: { color: "#ff2f55", label: "Belum Input" },
+  persiapan: { color: "#f54eb9", label: "Persiapan" },
+  rancangan: { color: "#39c449", label: "Rancangan Awal" },
+  ranwal: { color: "#263238", label: "Rancangan" },
+  musrenbang: { color: "#ffbc34", label: "Musrenbang" },
+  rancanganakhir: { color: "#7460ee", label: "Rancangan Akhir" },
+  penetapan: { color: "#009efb", label: "Penetapan" },
 };
 
 const showModal = ref(false);
@@ -591,8 +58,8 @@ onMounted(() => {
         {
           label: "Chart Rekap Tahapan Per-Provinsi " + data.value.singkat.tahun,
           data: data.value.chart.value,
-          backgroundColor: ["#67B8FF", "#1391FF", "#0070D2", "#005EB0", "#004179", "#002444", "#4A47FF", "#0300D0", "#00D0E8", "#0097A8"],
-          hoverOffset: 4,
+          backgroundColor: ["#ef4444", "#22c55e", "#1f2937", "#eab308", "#9333ea", "#3b82f6", "#c084fc"],
+          hoverOffset: 10,
         },
       ],
     };
@@ -629,14 +96,13 @@ onMounted(() => {
         <SelectYear />
       </div>
     </div>
-    
 
     <div class="w-full bg-white mt-6 rounded-3xl">
       <div class="w-full h-16 bg-[#ff9000] rounded-tr-2xl rounded-tl-2xl rounded- text-white p-5 text-xl">
         <h1>Informasi Daerah</h1>
       </div>
       <div class="flex flex-row p-10 items-center">
-        <img class="w-60 h-60 mr-10" src="@/assets/images/aceh.png" alt="logo" />
+        <img class="w-52 h-52 mr-10" src="@/assets/images/aceh.png" alt="logo" />
         <div class="flex flex-col w-full">
           <div class="border-b-2 pb-5">
             <h1 class="text-2xl font-medium">
@@ -668,17 +134,27 @@ onMounted(() => {
       <!-- <h1>Rekap untuk {{ $route.params.province }}</h1> -->
       <div class="flex flex-col gap-5 py-5">
         <div class="flex gap-3 flex-col lg:flex-row">
-          <div class="bg-[#f9fafb] px-4 sm:px-9 py-3 sm:py-5 lg:p-8 rounded-3xl flex flex-col gap-3 text-white w-full">
-            <h1 class="text-xl text-black font-semibold mb-2">RKPD</h1>
-            <div class="w-full grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-5 lg:gap-6 mb-8">
-              <StatusCard v-for="(card, key) in rkpdCards" :key="key" :color="card.color" :value="data.singkat[key]" :label="card.label" @card-click="openModal(key)" />
+          <div class="bg-white px-4 sm:px-9 py-3 sm:py-5 lg:p-8 rounded-3xl flex flex-col gap-3 text-black w-full">
+            <h1 class="text-xl font-semibold mb-2">RKPD</h1>
+            <div class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3 mb-8">
+              <StatusCard
+                v-for="(card, key) in rkpdCards"
+                :key="key"
+                :color="card.color"
+                :value="data.singkat[key]"
+                :label="card.label"
+                @card-click="openModal(key)"
+                class="w-full hover:scale-105 duration-150 hover:shadow-md" />
             </div>
           </div>
         </div>
-        <div class="flex w-full h-full justify-center bg-[#272B34] rounded p-4 sm:px-20 py-12 max-h-[700px]">
-          <canvas id="myChart" class="block"></canvas>
+
+        <!-- Bottom Row with 3 Grids -->
+        <div class="flex w-full justify-center bg-white rounded-3xl sm:px-20">
+          <div class="w-[700px] grid sm:grid-cols-3 gap-5">
+            <canvas id="myChart" class="col-span-3" width="600" height="400"></canvas>
+          </div>
         </div>
-        <div></div>
       </div>
 
       <!-- Modal -->
@@ -735,31 +211,6 @@ onMounted(() => {
     </div>
 
     <div v-else>
-      <div class="w-full bg-white mt-6 rounded">
-        <div class="w-full h-16 bg-[#FFBC34] rounded-t text-white p-5 text-xl">
-          <h1>Informasi Daerah</h1>
-        </div>
-        <div class="flex flex-row p-10 items-center">
-          <img class="w-28 h-28 mr-10" src="@/assets/images/aceh.png" alt="logo" />
-          <div class="flex flex-col w-full">
-            <div class="border-b-2 pb-5">
-              <h1 class="text-2xl font-medium">
-                {{ $route.params.district.toUpperCase() }}
-              </h1>
-              <h1>PERIODE RPJMD (2018 - 2023) - "Terwujudnya Aceh Selatan yang Bekeadilan Secara Sosial dan Ekonomi"</h1>
-            </div>
-            <div class="flex flex-col gap-2 pt-5">
-              <div class="flex flex-row border-2">
-                <div class="p-3">Nama Kepala Daerah</div>
-                <div class="border-x p-3">:</div>
-                <div class="flex flex-1 p-3"></div>
-              </div>
-              <h1 class="text-lg font-semibold">Tahapan</h1>
-              <h1>-</h1>
-            </div>
-          </div>
-        </div>
-      </div>
       <TablePagu />
     </div>
   </div>

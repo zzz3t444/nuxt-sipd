@@ -4,7 +4,7 @@ import { useRoute } from "vue-router";
 import temaListData from "../../utils/TematikList.json";
 
 const route = useRoute();
-const temaList = temaListData; // Or import it as you did previously
+const temaList = temaListData; 
 const selectedThemes = ref([]);
 
 onMounted(() => {
