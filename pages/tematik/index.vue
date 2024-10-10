@@ -6,31 +6,28 @@ import temaListData from "../../utils/TematikList.json";
 const temaList = ref(temaListData);
 const selectedRows = ref([]);
 const selectedYear = ref("2024");
-const selectedEntries = ref(25); // Default entries to show
+const selectedEntries = ref(25);
 const years = [2025, 2024, 2023, 2022, 2021, 2020];
-
-const isAllSelected = computed(() => selectedRows.value.length === filteredTemaList.value.length && selectedRows.value.length > 0);
-
-const toggleAll = () => {
-  if (isAllSelected.value) {
-    selectedRows.value = [];
-  } else {
-    selectedRows.value = filteredTemaList.value.map((item) => item.id);
-  }
-};
+const currentPage = ref(1);
 
 const filteredTemaList = computed(() => {
   return selectedYear.value === "2025" ? [] : temaList.value;
 });
 
-// New computed property to slice the filteredTemaList
+const totalPages = computed(() => {
+  return Math.ceil(filteredTemaList.value.length / selectedEntries.value);
+});
+
+// New computed property to slice the filteredTemaList based on currentPage
 const displayedTemaList = computed(() => {
-  return filteredTemaList.value.slice(0, selectedEntries.value);
+  const start = (currentPage.value - 1) * selectedEntries.value;
+  return filteredTemaList.value.slice(start, start + selectedEntries.value);
 });
 
 const updateYear = () => {
   console.log("Year updated to:", selectedYear.value);
   selectedRows.value = [];
+  currentPage.value = 1; // Reset to first page
 };
 
 const router = useRouter();
@@ -42,46 +39,52 @@ const applySelection = () => {
     alert("Please select at least one item to apply.");
   }
 };
+
+// Navigation functions
+const nextPage = () => {
+  if (currentPage.value < totalPages.value) {
+    currentPage.value++;
+  }
+};
+
+const prevPage = () => {
+  if (currentPage.value > 1) {
+    currentPage.value--;
+  }
+};
 </script>
 
 <template>
   <div class="flex justify-between items-center">
-    <div>
-      <h1 class="text-2xl text-black">Tematik</h1>
+    <div class="">
+      <h1 class="text-2xl text-black">Bidang Urusan</h1>
       <h1 class="text-sm text-neutral-500">
         <NuxtLink to="/" class="text-[#009efb] hover:text-[#7460e]">Dashboard</NuxtLink>
-        /
+        >
         <NuxtLink to="/" class="text-[#009efb] hover:text-[#7460e]">Informasi Pembangunan Daerah</NuxtLink>
-        / Tematik
+        > Urusan Pemerintahan
       </h1>
     </div>
-    <div>
-      <select v-model="selectedYear" @change="updateYear" name="tahun" id="tahun" class="bg-[#f20a34] rounded-full py-2 px-8 text-white font-semibold">
-        <option v-for="year in years" :key="year" :value="year" class="bg-white text-black">Tahun {{ year }}</option>
-      </select>
+    <div class="">
+      <SelectYear />
     </div>
   </div>
 
   <div class="bg-white w-full sm:px-5 py-4 rounded-2xl my-8 text-white">
     <div class="w-full bg-white px-7 rounded-lg text-black py-8">
-      <header class="flex items-center mb-5 gap-10">
-        <div class="flex items-center gap-4">
-          <span>Show</span>
-          <select v-model="selectedEntries" class="py-2 px-3 w-[120px] outline-none rounded-md text-left bg-[#f2f7f8]">
-            <option value="10">10</option>
-            <option value="25">25</option>
-            <option value="50">50</option>
-            <option value="75">75</option>
-            <option value="100">100</option>
-            <option value="150">150</option>
-            <option value="200" selected>200</option>
-          </select>
-          <span>Entries</span>
-        </div>
-        <div>
-          <span>Showing {{ displayedTemaList.length }} of {{ filteredTemaList.length }} entries</span>
-        </div>
-      </header>
+      <div class="flex items-center gap-4">
+        <span>Show</span>
+        <select v-model="selectedEntries" class="py-2 px-3 w-[120px] outline-none rounded-md text-left bg-[#f2f7f8]">
+          <option value="10">10</option>
+          <option value="25">25</option>
+          <option value="50">50</option>
+          <option value="75">75</option>
+          <option value="100">100</option>
+        </select>
+        <span>Entries</span>
+        <span class="ml-16">Showing 0 to 0 of 0 entries</span>
+      </div>
+
       <div class="w-full mt-10 overflow-x-auto">
         <table class="w-full" v-if="displayedTemaList.length > 0">
           <thead>
@@ -104,7 +107,7 @@ const applySelection = () => {
               <td class="py-3 px-5 text-center">
                 <input type="checkbox" :value="tema.id" v-model="selectedRows" />
               </td>
-              <td class="py-3 px-5 text-center">{{ index + 1 }}</td>
+              <td class="py-3 px-5 text-center">{{ (currentPage.value - 1) * selectedEntries.value + index + 1 }}</td>
               <td class="py-3 px-5">
                 <NuxtLink :to="`/tematik/${tema.tema}`">{{ tema.name }}</NuxtLink>
               </td>
@@ -128,13 +131,16 @@ const applySelection = () => {
         </table>
         <div v-else class="text-center text-gray-500 py-5">No data available for the selected year.</div>
 
-        <div class="flex justify-between mt-10 items-center">
-          <h1 class="text-md font-medium">Data Update : 20 Juli 2024</h1>
-          <button @click="applySelection" class="py-2 px-6 bg-[#009efb] rounded-lg text-white hover:scale-95 duration-150 transition-all">Terapkan</button>
+        <!-- Pagination Controls -->
+        <div class="flex justify-between mt-5">
+          <button @click="prevPage" :disabled="currentPage === 1" class="py-2 px-4 bg-blue-500 text-white rounded-lg">Previous</button>
+          <span>Page {{ currentPage }} of {{ totalPages }}</span>
+          <button @click="nextPage" :disabled="currentPage === totalPages" class="py-2 px-4 bg-blue-500 text-white rounded-lg">Next</button>
         </div>
       </div>
     </div>
   </div>
-
-  <TabsSystem />
+  <div>
+    <TabsSystem/>
+  </div>
 </template>

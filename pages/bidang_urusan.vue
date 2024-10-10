@@ -83,7 +83,7 @@ const province = provinceNameListData;
               <td class="py-3">2</td>
               <td class="py-3">Kab/kota</td>
               <td class="py-3">0</td>
-              <td class="py-3">0</td>
+              <td class="py-3">0</td> 
               <td class="py-3">Lorem ipsum dolor sit amet</td>
             </tr>
             <!-- Total row -->
