@@ -126,7 +126,14 @@ onMounted(() => {
       <div class="bg-white px-4 sm:px-9 py-3 sm:py-5 lg:p-8 rounded-3xl flex flex-col gap-3 text-white w-full">
         <h1 class="text-xl text-black font-bold mb-2">RKPD</h1>
         <div class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-5 lg:gap-3 mb-8">
-          <StatusCard v-for="(card, key) in rkpdCards" :key="key" :color="card.color" :value="data.singkat[key]" :label="card.label" @card-click="openModal(key)" />
+          <StatusCard
+            v-for="(card, key) in rkpdCards"
+            :key="key"
+            :color="card.color"
+            :value="data.singkat[key]"
+            class="hover:scale-105 duration-150"
+            :label="card.label"
+            @card-click="openModal(key)" />
         </div>
       </div>
 
@@ -134,14 +141,28 @@ onMounted(() => {
         <div class="bg-white px-4 sm:px-9 py-3 sm:py-5 lg:p-8 rounded-3xl flex flex-col gap-3 text-white w-full">
           <h1 class="text-xl text-black font-bold mb-2">KUA dan PPAS</h1>
           <div class="w-full grid grid-cols-1 sm:grid-cols-1 gap-5 sm:gap-5 lg:gap-3 mb-8">
-            <StatusCard v-for="(card, key) in kuaPpasCards" :key="key" :color="card.color" :value="data.singkat[key]" :label="card.label" @card-click="openModal(key)" />
+            <StatusCard
+              v-for="(card, key) in kuaPpasCards"
+              :key="key"
+              :color="card.color"
+              :value="data.singkat[key]"
+              class="hover:scale-105 duration-150"
+              :label="card.label"
+              @card-click="openModal(key)" />
           </div>
         </div>
 
         <div class="bg-white px-4 sm:px-9 py-3 sm:py-5 lg:p-8 rounded-3xl flex flex-col gap-3 text-white w-full">
           <h1 class="text-xl text-black font-bold mb-2">APBD</h1>
           <div class="w-full grid grid-cols-1 sm:grid-cols-1 gap-5 sm:gap-5 lg:gap-3 mb-8">
-            <StatusCard v-for="(card, key) in apbdCards" :key="key" :color="card.color" :value="data.singkat[key]" :label="card.label" @card-click="openModal(key)" />
+            <StatusCard
+              v-for="(card, key) in apbdCards"
+              :key="key"
+              :color="card.color"
+              :value="data.singkat[key]"
+              class="hover:scale-105 duration-150"
+              :label="card.label"
+              @card-click="openModal(key)" />
           </div>
         </div>
       </div>
