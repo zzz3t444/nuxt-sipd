@@ -11,6 +11,7 @@ const attr = useAttrs() as Attrs;
 const selected = ref<string>("");
 const isActive = ref(false);
 const searchQuery = ref("");
+const activeDropdown = ref<number | null>(null); 
 
 const filteredItems = computed(() => {
   if (Array.isArray(attr.render)) {
@@ -21,8 +22,16 @@ const filteredItems = computed(() => {
   return [];
 });
 
-const toggleDropdown = () => {
-  isActive.value = !isActive.value;
+const toggleDropdown = (index: number) => {
+  // Close any open dropdown and open the clicked one
+  if (activeDropdown.value === index) {
+    // If the same dropdown is clicked, toggle it
+    isActive.value = !isActive.value;
+  } else {
+    // Close the previously open dropdown and open the new one
+    isActive.value = true;
+    activeDropdown.value = index;
+  }
 };
 
 const filterItems = (event: Event) => {
@@ -32,6 +41,7 @@ const filterItems = (event: Event) => {
 const selectItem = (item: string) => {
   selected.value = item;
   isActive.value = false;
+  activeDropdown.value = null; // Reset active dropdown
 };
 
 onMounted(() => {
@@ -40,8 +50,10 @@ onMounted(() => {
     const targetElement = event.target as HTMLElement;
     if (!targetElement.closest(".relative")) {
       isActive.value = false;
+      activeDropdown.value = null; // Reset active dropdown on outside click
     }
   };
+
   window.addEventListener("click", handleClickOutside);
   watch(isActive, (newValue) => {
     if (!newValue) searchQuery.value = "";
@@ -55,11 +67,11 @@ onMounted(() => {
       <option v-for="item in attr.render" :key="item" class="selectori" :value="item">{{ item }}</option>
     </select>
     <div class="w-full relative">
-      <span class="button w-[100%] text-black bg-[#f2f7f8] rounded-md flex justify-between items-center px-8 py-4 cursor-pointer" @click="toggleDropdown">
+      <span class="button w-[100%] text-black bg-[#f2f7f8] rounded-md flex justify-between items-center px-8 py-4 cursor-pointer" @click="toggleDropdown(0)">
         <div>{{ selected ? selected : "- Belum Memilih -" }}</div>
         <i class="fa-solid fa-chevron-down"></i>
       </span>
-      <div v-show="isActive" class="w-full bg-white shadow-xl rounded-lg text-black absolute left-0 top-[100%] z-20 select">
+      <div v-show="activeDropdown === 0 && isActive" class="w-full bg-white shadow-xl rounded-lg text-black absolute left-0 top-[100%] z-20 select">
         <div class="">
           <input type="text" placeholder="Search..." class="search w-full px-4 py-2 border-b-2 bg-[#f2f7f8] outline-none" @input="filterItems" />
         </div>
