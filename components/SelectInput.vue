@@ -11,7 +11,7 @@ const attr = useAttrs() as Attrs;
 const selected = ref<string>("");
 const isActive = ref(false);
 const searchQuery = ref("");
-const activeDropdown = ref<number | null>(null); 
+const activeDropdown = ref<number | null>(null);
 
 const filteredItems = computed(() => {
   if (Array.isArray(attr.render)) {
