@@ -23,9 +23,7 @@ const filteredItems = computed(() => {
 });
 
 const toggleDropdown = (index: number) => {
-  // Close any open dropdown and open the clicked one
   if (activeDropdown.value === index) {
-    // If the same dropdown is clicked, toggle it
     isActive.value = !isActive.value;
   } else {
     // Close the previously open dropdown and open the new one
@@ -41,7 +39,7 @@ const filterItems = (event: Event) => {
 const selectItem = (item: string) => {
   selected.value = item;
   isActive.value = false;
-  activeDropdown.value = null; // Reset active dropdown
+  activeDropdown.value = null;
 };
 
 onMounted(() => {
@@ -50,7 +48,7 @@ onMounted(() => {
     const targetElement = event.target as HTMLElement;
     if (!targetElement.closest(".relative")) {
       isActive.value = false;
-      activeDropdown.value = null; // Reset active dropdown on outside click
+      activeDropdown.value = null;
     }
   };
 

@@ -23,8 +23,7 @@ const activeTab = ref(0);
       </button>
     </div>
 
-    <!-- Tab content -->
-    <div class=" pt-0">
+    <div class="pt-0">
       <component :is="tabs[activeTab].component"></component>
     </div>
   </div>

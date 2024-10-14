@@ -137,10 +137,13 @@ const prevPage = () => {
           <span>Page {{ currentPage }} of {{ totalPages }}</span>
           <button @click="nextPage" :disabled="currentPage === totalPages" class="py-2 px-4 bg-blue-500 text-white rounded-lg">Next</button>
         </div>
+        <div>
+          <p class="text-lg mt-10 font-medium">Data Update : 12 Agustus 2024</p>
+        </div>
       </div>
     </div>
   </div>
   <div>
-    <TabsSystem/>
+    <TabsSystem />
   </div>
 </template>

@@ -20,7 +20,7 @@ defineEmits(["cardClick"]);
 <template>
   <div class="w-full flex justify-center">
     <div
-      class="border h-36  p-2 pl-5 rounded-2xl flex justify-between bg-white cursor-pointer text-white w-full"
+      class="border h-36 p-2 pl-10 rounded-2xl flex justify-between bg-white cursor-pointer text-white w-full"
       :style="{
         borderColor: color,
         background: color,
